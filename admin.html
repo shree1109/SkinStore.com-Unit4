@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Page</title>
+    <style>
+        h1{
+            text-align: center;
+            font-size: 35px;
+            align-items: center;
+        }
+        form{
+            width: 35%;
+            font-size: 18px;
+            background-color: rgb(244, 239, 194);
+            align-items: center;
+            align-content: center;
+            padding: 20px;
+            margin: auto;
+        }
+        .productHead{
+            display: block;
+            width: 32%;
+            font-size: 18px;
+            
+        }
+        form p{
+            width: 100%;
+            font-size: 18px;
+        }
+        form input{
+            width: 70%;
+            padding: 5px;
+            font-size: 14px;
+            margin: 5px 20px;
+        }
+        form >div{
+            display: flex;
+            padding: 10px;
+            font-size: 16px;
+            color: white;
+            justify-content: space-evenly;
+        }
+        #formsub{
+            display: none;
+        }
+        .productbtn{
+            width: 30%;
+            padding: 5px;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+    <form action="">
+        <h1>Products  </h1>
+        <label class ="productHead"for="" >Product ID</label>
+        <input type="number" id="proId"><br>
+        <label class ="productHead" for="" >Add Image URl</label>
+        <input type="link" id="proImage" placeholder="Enter Image Link here">
+        <label class ="productHead" for="" >Product Name</label>
+        <input type="text" id="proName" placeholder="Product Name"><br>
+        <label class ="productHead" for="" >Product Description</label>
+        <input type="text" id="proDes" placeholder="Enter Product Description here"><br>
+        <label class ="productHead" for="" >MRP</label>
+        <input type="number" id="proMRP" placeholder="Enter MRP here"><br>
+        <label class ="productHead" for="" >Discount Percent</label>
+        <input type="number" id="proDis" placeholder="Enter Discount Percent here"><br>
+        <p>Discounted Prize : <span id="finalPrize"></span> </p>
+        <div>
+        <button class="productbtn" id="preview">Final Price</button>
+        <input class="productbtn" id= "formsub" type="submit">
+        <button class="productbtn" id="productDelete" > Delete</button>
+        <button class="productbtn" id="productUpdate">Update</button>
+    </div>
+    </form>
+        
+    
+</body>
+</html>
+<script>
+ var countId=1;
+ var storeProd=JSON.parse(localStorage.getItem("storeData")) || [];
+ var countId=(storeProd.length-1) ||0;
+ console.log(countId);
+document.getElementById("preview").addEventListener("click",getPrice);
+function getPrice(){
+    event.preventDefault();
+    document.querySelector("#proId").setAttribute("value",countId);
+        var Product_id=document.querySelector("#proId").value;
+        console.log(Product_id);
+        var image=document.querySelector("#proImage").value;
+        var name=document.querySelector("#proName").value;
+        var description=document.querySelector("#proDes").value;
+        var MRP=+document.querySelector("#proMRP").value;
+        var discount=+document.querySelector("#proDis").value;
+        var price="₹"+ Math.round(MRP-((MRP*discount)/100))+"/-";
+        document.querySelector("#finalPrize").textContent=price;
+        console.log(name,MRP,discount);
+        document.querySelector("#preview").style.display="none"
+        document.querySelector("#formsub").style.display="block"
+
+}
+
+    
+ document.querySelector("form").addEventListener("submit",addProduct);      
+
+
+function addProduct(){
+    document.querySelector("#proId").textContent=countId;
+    
+    var Product_id=document.querySelector("#proId").value;
+        var image=document.querySelector("#proImage").value;
+        var name=document.querySelector("#proName").value;
+        var description=document.querySelector("#proDes").value;
+        var MRP=+document.querySelector("#proMRP").value;
+        var discount=+document.querySelector("#proDis").value;
+        var price="₹"+ Math.round(MRP-((MRP*discount)/100))+"/-";
+        document.querySelector("#finalPrize").textContent=price;
+    event.preventDefault();   
+        var storeProduct={
+            Id:Product_id,
+            img:image,
+            name:name,
+            description:description,
+            MRP:MRP,
+            discount:discount,
+            finalPrice:price,
+        };        
+        storeProd.push(storeProduct);
+      localStorage.setItem("storeData",JSON.stringify(storeProd));
+    document.querySelector("form").reset();
+    document.querySelector("#finalPrize").textContent="";
+    document.querySelector("#preview").style.display="block"
+        document.querySelector("#formsub").style.display="none"
+        countId++;
+        document.querySelector("#proId").setAttribute("value","");
+}
+
+</script>

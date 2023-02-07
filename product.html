@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>skinstore-Product Page</title>
+    <style>
+        #child-1{
+            padding: 15px;
+            box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+        }
+        #child-1 button{
+            width: 98%;
+            text-align: start;
+            border: none;
+            background-color: white;    
+            border-bottom: 1px solid rgb(105, 99, 99);
+            scroll-behavior: auto;
+   
+        }
+        #child-1 input{
+            height: 20px;
+            margin-right: 20px;
+            
+   
+        }
+
+        #header{
+            border: 1px solid rgb(76, 41, 137);
+            width: 100%;
+            margin-bottom: 50px;
+        }
+        #ParentBox{
+            padding: 10px;
+            /* border: 1px solid black; */
+            display:flex;
+            justify-content: space-between;
+        }
+        #ParentBox>div{
+            /* border: 2px solid rgb(165, 6, 6); */
+            
+        }
+        #ParentBox>div:nth-child(1){
+           width: 23%;
+           /* border: 2px solid rgb(192, 179, 27); */
+        }
+        #ParentBox>div:nth-child(2){
+           width: 77%;
+           /* border: 2px solid rgb(128, 22, 4); */
+        }
+        #ParentBox>div:nth-child(2)>div{
+           width: 100%;
+           
+           /* border: 2px solid rgb(71, 30, 143); */
+        }
+        #child-2 {
+            padding: 20px;
+            /* border: 2px solid red; */
+        }
+
+        #subchiled-1>h1{
+            font-size: 42px;
+            font-family: Arial, Helvetica, sans-serif;
+            font-weight: 700;
+            }
+            #subchiled-1>p{
+            font-size: 12px;
+            line-height: 19.6px;
+            font-family: Arial, Helvetica, sans-serif;
+            font-weight: 300;
+            color: #2E3337;
+    
+            
+            }
+        #subchild-2{
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+          gap: 10px;
+          padding: 10px;
+          margin-top: 25px;
+        }
+        #page{
+            
+            justify-content: space-between;
+            /* border: 2px solid orange;    */
+            padding:10px            
+            
+        }
+
+        #page:hover{
+            margin: 20px;
+            scale: 1.1;  
+            box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+               border-radius: 5px;
+            
+        }
+        
+
+        
+        #addcartbtn{
+            width: 100%;
+            padding: 12px;
+            background-color: RGB(51, 51, 51);
+            color: white;
+            line-height:18px;
+            font-size: 16px;
+            font-family: Arial, Helvetica, sans-serif;
+            border: none;
+            margin-top: 25px;
+
+        }
+        #addcartbtn:hover{
+           background-color: #28BDB7;
+
+        }
+
+        #priceAmount{
+            display: flex;
+            justify-content: space-between;
+            font-size: 19.5px;
+            font-weight: 550;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            padding: 10px;
+        }
+        
+        #sortProduct{
+            width: 23%;
+            padding:9.5px;
+          margin-left: 15px;
+          margin-top: 20px;
+        }
+        
+
+
+
+
+
+
+
+
+
+
+
+
+        
+        #footer{
+            border: 1px solid rgb(24, 145, 42);
+        }
+        img{
+            width: 100%;
+        }
+
+    </style>
+</head>
+<body>
+    <div id="header">
+
+    </div>
+    
+    <div id="ParentBox">
+        <div id="child-1">
+            <h2>Refine</h2>
+            <button>
+                <p>Skincare Product Type<span><i class="fa-regular fa-angle-down"></i></span></p>
+                <!-- <h3>Skincare Product Type <i class="fa-solid fa-chevron-down"></i></h3> -->
+                
+            </button>
+            <input type="checkbox" name="Moisturiser" id="">
+            <label for="Moisturiser">Moisturiser (1096)</label><br>
+            <input type="checkbox" name="Serums" id="">
+            <label for="Serums">Serums (738)</label><br>
+            <input type="checkbox" name="Cleanser" id="">
+            <label for="Cleanser">Cleanser (487)</label><br>
+            <input type="checkbox" name="Mask" id="">
+            <label for="Mask">Mask (322)</label><br>
+            <input type="checkbox" name="Toner" id="">
+            <label for="Toner">Toner (273)</label><br>
+
+            <button>
+                <h3>Skincare Day Night</h3>
+            </button>
+            <input type="checkbox" name="Any" id="">
+            <label for="Any">Any (1749)</label><br>
+            <input type="checkbox" name="Day" id="">
+            <label for="Day">Day (1140)</label><br>
+            <input type="checkbox" name="Night" id="">
+            <label for="Night">Night (997)</label><br>
+
+            <button>
+                <h3>Skincare Format</h3>
+            </button>
+            <input type="checkbox" name="Cream" id="">
+            <label for="Cream">Cream (782)</label><br>
+            <input type="checkbox" name="Fluid" id="">
+            <label for="Fluid">Fluid (636)</label><br>
+            <input type="checkbox" name="Gel" id="">
+            <label for="Gel">Gel (279)</label><br>
+            <input type="checkbox" name="Oil" id="">
+            <label for="Oil">Oil (131)</label><br>
+            <input type="checkbox" name="Foam" id="">
+            <label for="Foam">Foam (108)</label><br>
+
+            <button>
+                <h3>Gender</h3>
+            </button>
+            <input type="checkbox" name="Boys" id="">
+            <label for="Boys">Boys (16)</label><br>
+            <input type="checkbox" name="Girls" id="">
+            <label for="Girls">Girls (16)</label><br>
+            <input type="checkbox" name="Men" id="">
+            <label for="Men">Men (1896)</label><br>
+            <input type="checkbox" name="Women" id="">
+            <label for="Women">Women (3014)</label><br>
+
+            <button>
+                <h3>Price</h3>
+            </button>
+            <input type="checkbox" name="Less than $10" id="">
+            <label for="Less than $10">Less than $10 (96)</label><br>
+            <input type="checkbox" name="$10-$25" id="">
+            <label for="$10-$25">$10-$25 (464)</label><br>
+            <input type="checkbox" name="$25-$50" id="">
+            <label for="$25-$50">$25-$50 (1160)</label><br>
+            <input type="checkbox" name="$50-$100" id="">
+            <label for="$50-$100">$50-$100 (1219)</label><br>
+            <input type="checkbox" name="More than $100" id="">
+            <label for="More than $100">More than $100 (682)</label><br>
+
+            <button>
+                <h3>Average Reviews</h3>
+            </button>
+            <input type="checkbox" name="2-3" id="">
+            <label for="2-3">2-3 (25)</label><br>
+            <input type="checkbox" name="3-4" id="">
+            <label for="3-4">3-4 (122)</label><br>
+            <input type="checkbox" name="4+" id="">
+            <label for="4+">4+ (1129)</label><br>
+
+        </div>
+        <div id="child-2">
+            <div id="subchild-1">
+                <h1>View All Skincare</h1>
+                <p>3489 Results</p>
+                <p>Radiant skin starts with effective skincare, and here at SkinStore we’ve curated the very best
+                    skincare brands. Shop with the peace of mind of our 20 years experience as an authorized retailer
+                    for brands such as <span>Arcona, Caudalie, Dermalogica, Elizabeth Arden, First Aid Beauty,
+                        Murad,Obagi,SkinCeuticals, SkinMedica, StriVectin</span> & many more. Take your pick from
+                    cleansers,moisturizers, masks, serums and more to treat all your skincare concerns from anti-aging
+                    to acne.
+                </p>
+                <span>Sort By</span>
+            <select name="Default" id="sortProduct">
+                <option value="Default">Default</option>
+                <option value="lth">Price: Low To High</option>
+                <option value="htl">Price: High To Low</option>
+                <option value="AZ">A-Z</option>
+                <option value="ZA">Z-A</option>
+                <option value="percentageDiscount">Percentage Discount</option>
+                <option value="Newest Arrival">Newest Arrival</option>
+            </select>
+      
+            </div>
+            
+
+            
+            <div id="subchild-2">
+
+            </div>
+        </div>
+
+        </div>
+        
+
+    </div>
+    <div id="footer">
+        
+    </div>
+
+</body>
+</html>
+<script>
+    var printData=JSON.parse(localStorage.getItem("storeData"));
+
+    displayProduct();
+    function displayProduct() {
+        printData.map(function(elem,index){
+            var div =document.createElement("div");
+            div.setAttribute("id","page");
+
+            var img=document.createElement("img");
+            img.setAttribute("src",elem.img);
+            
+            var description=document.createElement("h3");
+            description=elem.description;
+         
+           
+            
+            var price=document.createElement("div");
+            price.setAttribute("id","priceAmount")
+
+            var final=document.createElement("h4");
+                final=elem.finalPrice;
+           
+            
+                var MRP=document.createElement("h4");
+                MRP="₹"+ elem.MRP +"/-";
+
+            var addcart= document.createElement("button");
+            addcart.textContent="Add to Cart";
+            addcart.setAttribute("id","addcartbtn")
+
+            price.append(final,MRP);
+            div.append(img, description, price, addcart);
+
+            document.querySelector("#subchild-2").append(div);
+
+
+        });
+    }
+
+
+    
+</script>
