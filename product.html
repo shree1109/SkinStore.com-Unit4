@@ -130,27 +130,28 @@
           margin-left: 15px;
           margin-top: 20px;
         }
-        
-
-
-
-
-
-
-
-
-
-
-
-
-        
-        #footer{
-            border: 1px solid rgb(24, 145, 42);
-        }
-        img{
+        #page img{
             width: 100%;
         }
 
+        #footer{
+            border: 1px solid rgb(24, 145, 42);
+        }
+        #p-img-1{
+            position: relative;
+            width: 100%;
+        }
+        #p-img-2{
+            position: absolute;
+            display: none;
+        }
+        #p-img-1:hover #p-img-2{
+            display: block;
+                    }
+
+        .prodAmt{
+            font-size: 20px;
+        }
     </style>
 </head>
 <body>
@@ -256,7 +257,7 @@
                 <option value="htl">Price: High To Low</option>
                 <option value="AZ">A-Z</option>
                 <option value="ZA">Z-A</option>
-                <option value="percentageDiscount">Percentage Discount</option>
+                <option value="MaxPerDis">Max. Percentage Discount</option>
                 <option value="Newest Arrival">Newest Arrival</option>
             </select>
       
@@ -268,7 +269,7 @@
 
             </div>
         </div>
-
+            
         </div>
         
 
@@ -280,45 +281,128 @@
 </body>
 </html>
 <script>
-    var printData=JSON.parse(localStorage.getItem("storeData"));
+    var printData=JSON.parse(localStorage.getItem("storeData")) || [];
+    var index=JSON.parse(localStorage.getItem("indexVal")) || [];
 
-    displayProduct();
-    function displayProduct() {
-        printData.map(function(elem,index){
+    displayProduct(printData);
+    function displayProduct(arr) {
+        document.querySelector("#subchild-2").innerHTML="";
+        arr.map(function(elem,index){
             var div =document.createElement("div");
+            // console.log(elem);
             div.setAttribute("id","page");
+            div.addEventListener("click",function(){
+                storeindex(elem);
+            })
+            
+            
+            
 
             var img=document.createElement("img");
             img.setAttribute("src",elem.img);
+            img.id="p-img-1"
+            
+            
+            var img2=document.createElement("img");
+            img2.setAttribute("src",elem.img2);
+            // console.log(elem.img2);
+            img2.id="p-img-2"
+     
+
+
             
             var description=document.createElement("h3");
             description=elem.description;
-         
-           
-            
+
+
             var price=document.createElement("div");
             price.setAttribute("id","priceAmount")
 
             var final=document.createElement("h4");
-                final=elem.finalPrice;
+                final="₹" +" " + elem.finalPrice +" /-";
+             
+ 
            
             
                 var MRP=document.createElement("h4");
-                MRP="₹"+ elem.MRP +"/-";
+                MRP="₹" +" "  + elem.MRP + "/-";
+                
+           
 
             var addcart= document.createElement("button");
             addcart.textContent="Add to Cart";
-            addcart.setAttribute("id","addcartbtn")
+            addcart.setAttribute("id","addcartbtn" )
+            addcart.addEventListener("click",function(){
+                addToCart(elem);
+                console.log(elem);
+            });
+
 
             price.append(final,MRP);
-            div.append(img, description, price, addcart);
+            div.append(img, img2,description, price, addcart);
 
             document.querySelector("#subchild-2").append(div);
+          
 
 
         });
     }
-
-
+var cart= JSON.parse(localStorage.getItem("cart-data")) || [];
+    function addToCart(elem){
+        cart.push(elem);
+        localStorage.setItem("cart-data",JSON.stringify(cart));
+    }
     
+
+    document.querySelector("#sortProduct").addEventListener("change",function(){
+        sort_Data();
+    })
+
+    function sort_Data(){
+        
+            if( document.querySelector("#sortProduct").value==="lth"){
+                printData.sort(function(a,b) {
+                return a.finalPrice - b.finalPrice;
+            });
+            
+            }
+            if( document.querySelector("#sortProduct").value==="htl"){
+                printData.sort(function(a,b) {
+                return b.finalPrice - a.finalPrice;
+                
+            });
+            
+            }
+            if( document.querySelector("#sortProduct").value==="AZ"){
+                printData.sort(function(a,b) {
+                return a.brand > b.brand;
+            });
+            
+            }
+            if( document.querySelector("#sortProduct").value==="ZA"){
+                printData.sort(function(a,b) {
+                return a.brand < b.brand;
+            });
+            
+            }
+            if( document.querySelector("#sortProduct").value==="MaxPerDis"){
+                printData.sort(function(a,b) {
+                return b.discount - a.discount;
+            });
+            }
+            if( document.querySelector("#sortProduct").value==="Default"){
+                printData.sort(function(a,b) {
+                return a,b;
+            });
+            }
+            console.log(printData);
+            displayProduct(printData);
+    }
+ 
+
+ function storeindex(elem){
+    console.log(elem);
+    localStorage.setItem("indexVal",JSON.stringify(elem))
+ }
 </script>
+<script src="productarray.js"></script>

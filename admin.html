@@ -6,62 +6,258 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Product Page</title>
     <style>
+        #adminFrame{
+            display: flex;
+            width: 95%;
+            margin: auto;
+            /* border: 5px solid black; */
+            
+        }
+        
+
+        #adminFrame >div:nth-child(1){
+            width:45%;
+            align-items: center;
+            align-content: center;
+            /* border: 2px solid red; */
+        }
+        #adminFrame >div:nth-child(2){
+            width:65%;
+            /* border: 2px solid rgb(0, 255, 21); */
+        }
+
+        #adminFrame>div:nth-child(2)>h2{
+            font-size: 50px;
+            text-align: center;
+            border-top: 3px solid black;
+            border-bottom: 3px solid black;
+            box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+        }
+
+       #productform{
+        /* width: 90%; */
+        margin-right: 10px;
+        padding: auto;
+        
+        
+       }
+
+        a{
+            font-size: 24px;
+            margin-left: 80%;
+        }
         h1{
             text-align: center;
             font-size: 35px;
             align-items: center;
+            background-color: rgb(130, 186, 235);
         }
         form{
-            width: 35%;
+         
             font-size: 18px;
-            background-color: rgb(244, 239, 194);
+            background-color: white;
             align-items: center;
             align-content: center;
             padding: 20px;
             margin: auto;
+            /* box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px; */
         }
         .productHead{
-            display: block;
-            width: 32%;
-            font-size: 18px;
+           
+            width: 90%;
+            font-size: 20px;
+            color: #000000;
             
         }
         form p{
             width: 100%;
-            font-size: 18px;
+            font-size: 20px;
         }
         form input{
             width: 70%;
-            padding: 5px;
+            padding: 7px;
             font-size: 14px;
-            margin: 5px 20px;
+            margin: 5px 40px;
+            border-style: groove;
+            border-radius: 5px ;
+            border-color: 1px solid gray;
+            background-color: rgb(221, 218, 214);
+            color: black;
+
         }
-        form >div{
-            display: flex;
-            padding: 10px;
-            font-size: 16px;
-            color: white;
-            justify-content: space-evenly;
-        }
-        #formsub{
+       
+        /* #proImage:hover{
             display: none;
         }
-        .productbtn{
-            width: 30%;
-            padding: 5px;
-            font-size: 16px;
+        #proImage2:hover{
+            display: block;
+        } */
+        form select{
+            width: 73%;
+            padding: 7px;
+            font-size: 14px;
+            margin: 5px 40px;
+            border-style: groove;
+            border-radius: 5px ;
+            border-color: 1px solid gray;
+           
+            background-color: rgb(221, 218, 214);
         }
+       
+        #formsub{
+            width: 80%;
+            margin-top: 30px ;
+        }
+        form > .productbtn{
+            width: 80%;
+            padding: 10px;
+            font-size: 16px;
+            text-align: center;
+            color: white;
+            background-color:RGB(51, 51, 51);
+            margin: auto;
+            
+        }
+        #recentProducts{
+            width: 100%;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+              gap:10px;
+            padding: 20px;
+            /* border: 2px solid crimson; */
+            margin: auto;
+            
+        }
+        #page{
+              
+            width: 90%;
+            
+            /* border: 2px solid orange;    */
+            padding:10px            
+            
+        }
+
+        #page:hover{
+            margin: 20px;
+            scale: 1.1;  
+            box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+               border-radius: 5px;
+            
+        }
+        
+
+        
+        #addcartbtn{
+            width: 100%;
+            padding: 12px;
+            background-color: green;
+            color: white;
+            line-height:18px;
+            font-size: 16px;
+            font-family: Arial, Helvetica, sans-serif;
+            border: none;
+            margin-top: 25px;
+
+        }
+        #addcartbtn:hover{
+           background-color: #bd2828;
+
+        }
+
+        #priceAmount{
+            display: flex;
+            justify-content: space-between;
+            font-size: 19.5px;
+            font-weight: 550;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            padding: 10px;
+        }
+        #p-img-1{
+            width: 100%;
+        }
+        #p-img-2{
+            width: 100%;
+            display: none;
+        }
+        
+       table{
+        width: 98%;
+        text-align: center;
+        font-size: 18px;
+        padding: 10px;
+        border-collapse: collapse;
+        margin: auto;
+    
+       }
+       table td{
+        padding: 1.5px;
+       }
+       thead{
+        background-color: rgb(14, 93, 124);
+        color: rgb(228, 219, 219);
+       }
+       table tr:nth-child(even){
+        background-color: #918e8e;
+       }
+       table,td,th  {
+        border: 1px solid rgb(87, 47, 47)
+        
+       }
+       table td:nth-child(4){
+        text-align: start;
+       }
+       table td:nth-child(8){
+      background-color: red;
+      color: white; 
+       }
+       table tr:hover{
+      background-color: rgb(223, 226, 19);
+      cursor: pointer;
+      
+      font-size: 19px;
+      
+       }
+       table thead:hover{
+        background-color: orange;
+       }
+       th{
+        font-size: 20px;
+        padding: 5px;
+       }
+       table td:nth-child(5),td:nth-child(7){
+        text-align: end;
+       }
+       form p{
+        display: none;
+       }
+        
     </style>
+   <script src="https://kit.fontawesome.com/ad020c6830.js" crossorigin="anonymous"></script>
 </head>
 <body>
-    <form action="">
+    <a href="product.html">Product Page</a>
+    <div id="adminFrame">
+        <div id="productform">
+        <form action="">
+        
         <h1>Products  </h1>
-        <label class ="productHead"for="" >Product ID</label>
+        <label class ="productHead"for="" >Product Id</label>
         <input type="number" id="proId"><br>
-        <label class ="productHead" for="" >Add Image URl</label>
+        <label class ="productHead" for="" >Image URl</label>
         <input type="link" id="proImage" placeholder="Enter Image Link here">
-        <label class ="productHead" for="" >Product Name</label>
-        <input type="text" id="proName" placeholder="Product Name"><br>
+        <label class ="productHead" for="" >Image 2 URl </label>
+        <input type="link" id="proImage2" placeholder="Enter Second Image Link here">
+        <label class ="productHead"  for="" >Product Category </label>
+        <select name="" id="prodCatg">
+            <option value="catg">Select Product Category</option>
+            <option value="skinCare">Skin Care</option>
+            <option value="hair">Hair</option>
+            <option value="makeUp">Makeup</option>
+            <option value="bath&Body">Bath & Body</option>
+            <option value="fragrance">Fragrance</option>
+        </select>
+        <label class ="productHead" for="" >Product Brand</label>
+        <input type="text" id="proBrand" placeholder="Enter Product Brand Name"><br>
         <label class ="productHead" for="" >Product Description</label>
         <input type="text" id="proDes" placeholder="Enter Product Description here"><br>
         <label class ="productHead" for="" >MRP</label>
@@ -69,74 +265,229 @@
         <label class ="productHead" for="" >Discount Percent</label>
         <input type="number" id="proDis" placeholder="Enter Discount Percent here"><br>
         <p>Discounted Prize : <span id="finalPrize"></span> </p>
-        <div>
-        <button class="productbtn" id="preview">Final Price</button>
+     
+        <!-- <button class="productbtn" id="preview">Final Price</button> -->
         <input class="productbtn" id= "formsub" type="submit">
-        <button class="productbtn" id="productDelete" > Delete</button>
-        <button class="productbtn" id="productUpdate">Update</button>
-    </div>
     </form>
-        
+    </div>
+    <div >
+        <h2>Recent Added Products</h2>
     
+    <div id="recentProducts">
+  
+    </div>
+</div>
+</div>
+<table>
+    <thead>
+        <th>Product Id</th>
+        <th>Product Brand</th>
+        <th>Product Category</th>
+        <th>Product Description</th>
+        <th>MRP</th>
+        <th>Discount</th>
+        <th>Discounted Price</th>
+        <th>Delete</th>
+    </thead>
+    <tbody>
+        
+    </tbody>
+</table>
+    
+        
+
 </body>
 </html>
 <script>
- var countId=1;
- var storeProd=JSON.parse(localStorage.getItem("storeData")) || [];
- var countId=(storeProd.length-1) ||0;
- console.log(countId);
-document.getElementById("preview").addEventListener("click",getPrice);
-function getPrice(){
-    event.preventDefault();
-    document.querySelector("#proId").setAttribute("value",countId);
-        var Product_id=document.querySelector("#proId").value;
-        console.log(Product_id);
-        var image=document.querySelector("#proImage").value;
-        var name=document.querySelector("#proName").value;
-        var description=document.querySelector("#proDes").value;
-        var MRP=+document.querySelector("#proMRP").value;
-        var discount=+document.querySelector("#proDis").value;
-        var price="₹"+ Math.round(MRP-((MRP*discount)/100))+"/-";
-        document.querySelector("#finalPrize").textContent=price;
-        console.log(name,MRP,discount);
-        document.querySelector("#preview").style.display="none"
-        document.querySelector("#formsub").style.display="block"
+ var countId=1 ;
+         
+ var storeProd=JSON.parse(localStorage.getItem("recentData")) || [];
+ var productData=JSON.parse(localStorage.getItem("storeData")) || [];
 
-}
+
+ 
+ var Product_id=productData.length+1;
+ document.querySelector("#proId").value=Product_id;
+ 
+  
+ var countId=(storeProd.length-1) ||0;
+ console.log(Product_id);
+// document.getElementById("preview").addEventListener("click",getPrice);
+// function getPrice(){
+    
+//         var MRP=+document.querySelector("#proMRP").value;
+//         var discount=+document.querySelector("#proDis").value;
+//         var price=Math.round(MRP-((MRP*discount)/100));
+//         // document.querySelector("#finalPrize").textContent="₹" +" "+ price +"/-";
+//         // console.log(name,MRP,discount);
+//         document.querySelector("#preview").style.display="none"
+//         document.querySelector("#formsub").style.display="block"
+
+// }
 
     
  document.querySelector("form").addEventListener("submit",addProduct);      
+//  var printData=JSON.parse(localStorage.getItem("recentData")) || [];    
 
-
-function addProduct(){
-    document.querySelector("#proId").textContent=countId;
+function addProduct(event){
+    event.preventDefault();   
     
-    var Product_id=document.querySelector("#proId").value;
+    Product_id=document.querySelector("#proId").value;
         var image=document.querySelector("#proImage").value;
-        var name=document.querySelector("#proName").value;
+        var image2=document.querySelector("#proImage2").value;
+        var catg=document.querySelector("#prodCatg").value;
+        var brand=document.querySelector("#proBrand").value;
         var description=document.querySelector("#proDes").value;
         var MRP=+document.querySelector("#proMRP").value;
         var discount=+document.querySelector("#proDis").value;
-        var price="₹"+ Math.round(MRP-((MRP*discount)/100))+"/-";
+        var price=Math.round(MRP-((MRP*discount)/100));
         document.querySelector("#finalPrize").textContent=price;
-    event.preventDefault();   
+        // console.log(MRP,discount,price);
+    
         var storeProduct={
             Id:Product_id,
             img:image,
-            name:name,
+            img2:image2,
+            catg:catg,
+            brand:brand,
             description:description,
             MRP:MRP,
             discount:discount,
             finalPrice:price,
         };        
         storeProd.push(storeProduct);
-      localStorage.setItem("storeData",JSON.stringify(storeProd));
+      localStorage.setItem("recentData",JSON.stringify(storeProd));
     document.querySelector("form").reset();
     document.querySelector("#finalPrize").textContent="";
-    document.querySelector("#preview").style.display="block"
-        document.querySelector("#formsub").style.display="none"
-        countId++;
-        document.querySelector("#proId").setAttribute("value","");
+    // document.querySelector("#preview").style.display="block"
+    //     document.querySelector("#formsub").style.display="none"
+        document.querySelector("#recentProducts").innerHTML="";
+     displayProduct(storeProd);
+     displayTable(productData);
+     document.querySelector("#proId").value=+Product_id+1;
+     
 }
 
+
+// console.log(storeProd);
+
+    displayProduct(storeProd);
+    function displayProduct(arr) {
+        document.querySelector("#recentProducts").innerHTML="";
+        arr.map(function(elem,index){
+            var div =document.createElement("div");
+            console.log(elem);
+            div.setAttribute("id","page");
+            var img=document.createElement("img");
+            img.setAttribute("src",elem.img);
+            img.id="p-img-1"
+            
+            
+            var img2=document.createElement("img");
+            img2.setAttribute("src",elem.img2);
+            console.log(elem.img2);
+            img2.id="p-img-2"
+     
+            
+            var description=document.createElement("h3");
+            description=elem.description;
+
+
+            var price=document.createElement("div");
+            price.setAttribute("id","priceAmount")
+
+            var final=document.createElement("h4");
+                final="₹" + " " + elem.finalPrice + "/-";
+
+           
+            
+                var MRP=document.createElement("h4");
+                MRP="₹" +" " + elem.MRP +"/-";
+             
+
+            var addProduct= document.createElement("button");
+            addProduct.textContent="Add to Product Page";
+            addProduct.setAttribute("id","addcartbtn")
+            addProduct.addEventListener("click",function(){
+                submitProduct(elem,index)
+               
+                                               /*         table data         */
+            });
+
+
+
+            price.append(final,MRP);
+            div.append(img, img2,description, price, addProduct);
+
+            document.querySelector("#recentProducts").append(div);
+
+           
+        });
+        
+
+        
+    }
+    
+
+    function submitProduct(elem,i){
+        productData.push(elem);
+        console.log(elem);
+        localStorage.setItem("storeData",JSON.stringify(productData));
+
+        storeProd.splice(i,1);
+        localStorage.setItem("recentData",JSON.stringify(storeProd));
+        displayProduct(storeProd);
+        displayTable(productData);
+        console.log(storeProd);
+        console.log("storeProd");
+    }
+
+
+    displayTable(productData);
+    function displayTable(arr){
+        document.querySelector("tbody").innerHTML=""; 
+        arr.map(function(elem,i){
+            var tr=document.createElement("tr");
+
+var td1=document.createElement("td");
+td1.textContent=elem.Id;
+
+var td2=document.createElement("td");
+td2.textContent=elem.brand;
+
+var td3=document.createElement("td");
+td3.textContent=elem.catg;
+
+var td4=document.createElement("td");
+td4.textContent=elem.description;
+
+var td5=document.createElement("td");
+td5.textContent=elem.MRP.toLocaleString();
+
+var td6=document.createElement("td");
+td6.textContent=elem.discount+"%";
+
+var td7=document.createElement("td");
+td7.textContent=elem.finalPrice.toLocaleString();;
+
+var td8=document.createElement("td");
+td8.innerHTML='<i class="fa-solid fa-trash-can"></i>';
+td8.addEventListener("click", function(){
+    deleteRow(i);
+})
+// console.log(td1);
+
+tr.append(td1, td2, td3, td4, td5, td6, td7, td8);
+document.querySelector("tbody").append(tr); 
+        
+    });
+}
+    function deleteRow(i){
+        productData.splice(i,1);
+        localStorage.setItem("storeData",JSON.stringify(productData));
+        displayTable(productData);
+    }
 </script>
+<!-- <script src="productarray.js"></script> -->
+
+
