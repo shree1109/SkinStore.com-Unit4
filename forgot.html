@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reset Password</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            background-color: #e4f9f9;
+        }
+
+        #existingCus {
+            width: 28%;
+            margin-top: 8%;
+            padding: 3%;
+            height: fit-content;
+            background-color: rgb(255 255 255);
+        }
+
+        #newCus {
+            margin-left: 3%;
+            margin-top: 8%;
+            width: 28%;
+            background-color: rgb(255 255 255);
+            height: fit-content;
+        }
+
+        #existingCus>h1 {
+            font-weight: 700;
+            font-style: normal;
+            color: #333333;
+            font-family: Lato, sans-serif;
+            font-size: 24px;
+            line-height: 32px;
+        }
+
+        #existingCus label {
+            font-weight: 550;
+            font-style: normal;
+            font-family: Lato, sans-serif;
+            font-size: 14px;
+            color: #333333;
+            line-height: 60px;
+        }
+
+        #email {
+            width: 94%;
+            padding: 15px;
+            border: none;
+            border: solid 1px #333333;
+            border-radius: 4px;
+            margin-top: -5px;
+            border-color: rgb(140, 140, 140);
+        }
+
+        #existingCus p {
+            font-family: Lato, sans-serif;
+            width: 300px;
+            font-style: normal;
+            font-size: 14px;
+            line-height: 20px;
+            color: #333333;
+        }
+
+        #existingCus button {
+            width: 102%;
+            padding: 3%;
+            background-color: #2e3337;
+            color: rgb(255, 255, 255);
+            border: 1px solid rgb(46, 51, 55);
+            cursor: pointer;
+            margin: 25px 25px 0px 25px;
+            margin-left: -.1px;
+        }
+
+        #existingCus button:hover {
+            background-color: rgb(84, 89, 94);
+            scale: 1.1;
+            border: none;
+        }
+
+        #existingCus a {
+            font-family: Lato, sans-serif;
+            font-size: 14px;
+            line-height: 40px;
+            letter-spacing: 0.3px;
+            color: rgb(46, 51, 55);
+            border: 1px solid transparent;
+            padding: calc(3px);
+        }
+
+        a:hover {
+            text-decoration: none;
+        }
+
+        #newCus h1 {
+            font-weight: 700;
+            font-style: normal;
+            color: #333333;
+            font-family: Lato, sans-serif;
+            font-size: 24px;
+            line-height: 32px;
+            /* padding: 35px; */
+            margin: 55px 0px 0px 30px;
+        }
+
+        #newCus button {
+            width: 90%;
+            padding: 3%;
+            margin: 20px;
+            background-color: #2e3337;
+            color: rgb(255, 255, 255);
+            border: 1px solid rgb(46, 51, 55);
+            cursor: pointer;
+        }
+
+        #newCus button:hover {
+            background-color: rgb(84, 89, 94);
+            scale: 1.1;
+            border: none;
+        }
+
+        @media screen and (max-width:999px) {
+            body {
+                display: block;
+            }
+
+            #existingCus {
+                width: 70%;
+                margin: auto;
+                margin-top: 100px;
+            }
+
+            #existingCus button {
+                width: 99%;
+                padding: 3%;
+                background-color: #2e3337;
+                color: rgb(255, 255, 255);
+                border: 1px solid rgb(46, 51, 55);
+                cursor: pointer;
+                margin: 25px 25px 0px 25px;
+                margin-left: -.1px;
+            }
+
+            #newCus {
+                width: 76%;
+                margin: auto;
+                margin-top: -30px;
+            }
+
+            #newCus h1 {
+                padding-top: 20px;
+            }
+
+        }
+    </style>
+</head>
+
+<body>
+    <div id="existingCus">
+        <h1>Forgot your password?</h1>
+        <p>Please enter your email address below and we'll email you instructions to reset it</p>
+        <label>* Email address</label>
+        <input type="text" id="email">
+        <button>RESET PASSWORD</button>
+        <a href="login.html">CANCEL</a>
+    </div>
+    <div id="newCus">
+        <h1>New Customers</h1>
+        <a href="newCustomer.html"><button>CONTINUE</button></a>
+        
+    </div>
+</body>
+
+</html>

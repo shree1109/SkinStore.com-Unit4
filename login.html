@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login | SkinStore</title>
+    <script src="https://kit.fontawesome.com/3e0c0ed060.js" crossorigin="anonymous"></script>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            background-color: #e4f9f9;
+        }
+
+        #existingCus {
+            width: 32%;
+            margin-top: 8%;
+            padding: 3%;
+            height: fit-content;
+            background-color: rgb(255 255 255);
+        }
+
+        #newCus {
+            margin-left: 3%;
+            margin-top: 8%;
+            width: 32%;
+            background-color: rgb(255 255 255);
+        }
+
+        #existingCus>h1 {
+            font-weight: 700;
+            font-style: normal;
+            color: #333333;
+            font-family: Lato, sans-serif;
+            font-size: 24px;
+            line-height: 32px;
+
+        }
+
+        #existingCus label {
+            font-weight: 550;
+            font-style: normal;
+            font-family: Lato, sans-serif;
+            font-size: 14px;
+            color: #333333;
+            line-height: 60px;
+        }
+
+        #email,
+        #password {
+            width: 94%;
+            padding: 20px;
+            border: none;
+            border: solid 1px #333333;
+            border-radius: 4px;
+            margin-top: -5px;
+
+        }
+
+        #existingCus p:nth-child(4) {
+            font-weight: 700;
+            font-style: normal;
+            font-family: Lato, sans-serif;
+            font-size: 14px;
+            margin-top: 30px;
+            margin-left: 1%;
+        }
+
+        #existingCus>a {
+            font-weight: 300;
+            font-style: normal;
+            font-family: Lato, sans-serif;
+            font-size: 14px;
+            line-height: 100px;
+            Color: #4d5155;
+            text-decoration: underline;
+        }
+
+        #signin {
+            width: 100%;
+            padding: 3%;
+            background-color: #2e3337;
+            color: rgb(255, 255, 255);
+            border: 1px solid rgb(46, 51, 55);
+            cursor: pointer;
+        }
+
+        #signin:hover {
+            background-color: rgb(84, 89, 94);
+            scale: 1.1;
+            border: none;
+        }
+
+        #existingCus p:nth-child(8) {
+            font-weight: 300;
+            font-style: normal;
+            font-family: Lato, sans-serif;
+            font-size: 14px;
+            margin-top: 40px;
+            color: rgb(51, 51, 51);
+        }
+        #newCus {
+            height: fit-content;
+            padding: 3%;
+        }
+        #newCus>h1 {
+            font-weight: 700;
+            font-style: normal;
+            font-family: Lato, sans-serif;
+            font-size: 24px;
+            color: #333333;
+            line-height: 20px;
+        }
+        #newCus button {
+            width: 100%;
+            padding: 3%;
+            background-color: #2e3337;
+            color: rgb(255, 255, 255);
+            border: 1px solid rgb(46, 51, 55);
+            cursor: pointer;
+        }
+
+        #newCus button:hover {
+            background-color: rgb(84, 89, 94);
+            scale: 1.1;
+            border: none;
+        }
+
+        #logo {
+            display: flex;
+            width: 100%;
+            margin-top: 30px;
+            justify-content: center;
+            align-items: center;
+            justify-content: space-evenly;
+        }
+
+        #fb {
+            width: 30px;
+            margin: 10px;
+            border-radius: 3px;
+        }
+
+        #google {
+            width: 40px;
+            margin: 5px;
+            margin-right: 8px;
+        }
+        #logo a {
+            display: flex;
+            width: 46%;
+            border: 1px solid rgb(126, 113, 113);
+            justify-content: center;
+            text-decoration: none;
+        }
+        #logo p {
+            display: inline;
+            font-family: Arial, Helvetica, sans-serif;
+            font-weight: bold;
+            font-size: 15px;
+            color: rgb(102, 102, 102);
+
+        }
+        #g {
+            margin-left: -8px;
+        }
+        @media screen and (max-width: 899px) {
+            body {
+                display: block;
+            }
+
+            #existingCus {
+                width: 70%;
+                margin: auto;
+                margin-top: 100px;
+            }
+            #newCus {
+                width: 70%;
+                margin: auto;
+                margin-top: 20px;
+            }
+        }
+
+        @media screen and (max-width:660px) {
+            #email,
+            #password {
+                width: 90%;
+                padding: 20px;
+                border: none;
+                border: solid 1px #333333;
+                border-radius: 4px;
+                margin-top: -5px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div id="existingCus">
+        <h1>Existing Customers</h1>
+        <label>* Email address</label>
+        <input type="text" id="email">
+        <label>* Password</label>
+        <input type="text" id="password">
+        <a href="forgot.html">FORGOT YOUR PASSWORD?</a>
+        <button id="signin">SIGN IN</button>
+        <p>Or, Continue with</p>
+        <div id="logo">
+            <a href="https://www.facebook.com/login.php?skip_api_login=1&api_key=1215984228522362&kid_directed_site=0&app_id=1215984228522362&signed_next=1&next=https%3A%2F%2Fwww.facebook.com%2Fv3.2%2Fdialog%2Foauth%3Fclient_id%3D1215984228522362%26redirect_uri%3Dhttps%253A%252F%252Floginservice.thehut.net%252Ffacebook%252FhandleLogin%26state%3DMzI2RjdDRDFCRTUwMDE3MTY0RUM1MDI3NUMxMTBBOURGMzlCMDc1OTEzMzc3ODJFNDJDRTQ5QzRDOUJGMzZEMA%253D%253D.ZXlKbGVIQnBjbmxVYVcxbElqb3hOamMxTmpjM01qRXhNVGs0TENKamMzSm1WRzlyWlc0aU9pSmtaakk0TVRGa1pTMDNOell4TFRRM09HTXRZVGt5WVMwNE0yRmpNekV4TXpWbE9EWWlMQ0p6YVhSbElqb2lNVEl4SWl3aWMzVmljMmwwWlNJNkluVnpJaXdpWTJ4cFpXNTBVM1JoZEdVaU9pSmxlVXA1V2xoU01XTnROVlZpZVVrMlNXMW9NR1JJUW5wS1ZFNUNTbFJLUjBwVVNrZGtNMlF6VEc1T2NtRlhOWHBrUnpsNVdsTTFhbUl5TUd4TmExcG9XVEpPZG1SWE5UQlRSemwwV2xNMWFGa3lUblprVnpVd1NXNHdYSFV3TUROa0lpd2ljSEp2ZG1sa1pYSWlPaUptWVdObFltOXZheUlzSW5KbFpHbHlaV04wVlhKc0lqb2lhSFIwY0hNNkx5OTNkM2N1YzJ0cGJuTjBiM0psTG1OdmJTOXpiMk5wWVd4QmRYUm9aVzUwYVdOaGRHbHZiaTVoWTJOdmRXNTBJaXdpWm14dmR5STZJbE5JU1VWTVJDSjk%253D%26scope%3Demail%26ret%3Dlogin%26fbapp_pres%3D0%26logger_id%3D4c63eef4-0473-424a-8a1f-a58887b4314c%26tp%3Dunspecified&cancel_url=https%3A%2F%2Floginservice.thehut.net%2Ffacebook%2FhandleLogin%3Ferror%3Daccess_denied%26error_code%3D200%26error_description%3DPermissions%2Berror%26error_reason%3Duser_denied%26state%3DMzI2RjdDRDFCRTUwMDE3MTY0RUM1MDI3NUMxMTBBOURGMzlCMDc1OTEzMzc3ODJFNDJDRTQ5QzRDOUJGMzZEMA%253D%253D.ZXlKbGVIQnBjbmxVYVcxbElqb3hOamMxTmpjM01qRXhNVGs0TENKamMzSm1WRzlyWlc0aU9pSmtaakk0TVRGa1pTMDNOell4TFRRM09HTXRZVGt5WVMwNE0yRmpNekV4TXpWbE9EWWlMQ0p6YVhSbElqb2lNVEl4SWl3aWMzVmljMmwwWlNJNkluVnpJaXdpWTJ4cFpXNTBVM1JoZEdVaU9pSmxlVXA1V2xoU01XTnROVlZpZVVrMlNXMW9NR1JJUW5wS1ZFNUNTbFJLUjBwVVNrZGtNMlF6VEc1T2NtRlhOWHBrUnpsNVdsTTFhbUl5TUd4TmExcG9XVEpPZG1SWE5UQlRSemwwV2xNMWFGa3lUblprVnpVd1NXNHdYSFV3TUROa0lpd2ljSEp2ZG1sa1pYSWlPaUptWVdObFltOXZheUlzSW5KbFpHbHlaV04wVlhKc0lqb2lhSFIwY0hNNkx5OTNkM2N1YzJ0cGJuTjBiM0psTG1OdmJTOXpiMk5wWVd4QmRYUm9aVzUwYVdOaGRHbHZiaTVoWTJOdmRXNTBJaXdpWm14dmR5STZJbE5JU1VWTVJDSjk%253D%23_%3D_&display=page&locale=en_GB&pl_dbl=0">
+                <img id="fb" src="https://s.yimg.com/fz/api/res/1.2/juUJc2SrROfDI6aUdgrQLQ--~C/YXBwaWQ9c3JjaGRkO2ZpPWZpdDtoPTEyMDtxPTgwO3c9MTIw/https://s.yimg.com/zb/imgv1/c165dc31-f7f7-35c4-8df4-cdd842798724/t_500x300"
+                alt="facebook">
+                <p>Facebook</p>
+            </a>
+            <a href="https://accounts.google.com/o/oauth2/v2/auth/oauthchooseaccount?client_id=1047782293270-uc6gapukv57blt03hbc6lt82dq80knbc.apps.googleusercontent.com&redirect_uri=https%3A%2F%2Floginservice.thehut.net%2Fgoogle%2FhandleLogin&scope=https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.email%20https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.profile&response_type=code&state=NTMyNDNGMTdDQkYzNjFCRTc3QTZBN0RBM0I1Mjk2NDUxODFBQUVBN0RGQkFFQzNEMTM4RDJCN0FBQjhGRTJEMg%3D%3D.ZXlKbGVIQnBjbmxVYVcxbElqb3hOamMxTmpjMk9URTNNREEyTENKamMzSm1WRzlyWlc0aU9pSmtZamt6WVRkbVlTMWtOemhtTFRRMk9UVXRPV1V6WWkwek9HUTNOR0ZtTm1Sa1pUa2lMQ0p6YVhSbElqb2lNVEl4SWl3aWMzVmljMmwwWlNJNkluVnpJaXdpWTJ4cFpXNTBVM1JoZEdVaU9pSmxlVXA1V2xoU01XTnROVlZpZVVrMlNXMW9NR1JJUW5wS1ZFNUNTbFJLUjBwVVNrZGtNMlF6VEc1T2NtRlhOWHBrUnpsNVdsTTFhbUl5TUd4TmExcG9XVEpPZG1SWE5UQlRSemwwV2xNMWFGa3lUblprVnpVd1NXNHdYSFV3TUROa0lpd2ljSEp2ZG1sa1pYSWlPaUpuYjI5bmJHVWlMQ0p5WldScGNtVmpkRlZ5YkNJNkltaDBkSEJ6T2k4dmQzZDNMbk5yYVc1emRHOXlaUzVqYjIwdmMyOWphV0ZzUVhWMGFHVnVkR2xqWVhScGIyNHVZV05qYjNWdWRDSXNJbVpzYjNjaU9pSlRTRWxGVEVRaWZRPT0%3D&prompt=consent&service=lso&o2v=2&flowName=GeneralOAuthFlow">
+                <img id="google" src="https://s.yimg.com/fz/api/res/1.2/S3fST7w3xYmfC.ud9K2fvQ--~C/YXBwaWQ9c3JjaGRkO2ZpPWZpdDtoPTEyMDtxPTgwO3c9MTIw/https://s.yimg.com/zb/imgv1/fe90b2b3-0ac3-3c81-8238-d3724bf23104/t_500x300"
+                alt="google">
+                <p id="g">Google</p>
+            </a>
+        </div>
+    </div>
+    <div id="newCus">
+        <h1>New Customers</h1>
+        <a href="newCustomer.html"><button>CONTINUE</button></a>
+        
+    </div>
+</body>
+
+</html>

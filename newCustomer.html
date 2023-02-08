@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About you | SkinStore</title>
+    <script src="https://kit.fontawesome.com/3e0c0ed060.js" crossorigin="anonymous"></script>
+    <style>
+        body {
+            background-color: #e4f9f9;
+        }
+
+        #mainBox {
+            width: 50%;
+            margin: auto;
+            background-color: rgb(255, 255, 255);
+            padding: 3%;
+            height: fit-content;
+        }
+
+        #mainBox p:first-child {
+            font-weight: 700;
+            font-style: normal;
+            font-family: Lato, sans-serif;
+            font-size: 24px;
+            color: rgb(51, 51, 51);
+        }
+
+        #mainBox p:nth-child(2) {
+            font-weight: 700;
+            font-style: normal;
+            font-family: Lato, sans-serif;
+            font-size: 20px;
+            margin-top: 40px;
+            color: rgb(51, 51, 51);
+        }
+
+        hr {
+            margin-top: 25px;
+        }
+
+        #mainBox p:nth-child(5) {
+            font-weight: 700;
+            font-style: normal;
+            font-family: Lato, sans-serif;
+            font-size: 20px;
+            color: rgb(51, 51, 51);
+        }
+
+        #mainBox p:nth-child(6) {
+            font-weight: 700;
+            font-style: normal;
+            font-family: Lato, sans-serif;
+            font-size: 14px;
+            margin-top: 5%;
+            padding-left: 8px;
+            color: rgb(51, 51, 51);
+        }
+
+        #name,#email,#confirmEmail,#password,#confirmPassword,#mobile,#referal{
+            width: 92%;
+            padding: 20px;
+            margin: 0 auto;
+            border: none;
+            border: solid 1px #aaa2a2;
+            border-radius: 4px;
+        }
+
+        #mainBox p:nth-child(8) {
+            font-weight: 700;
+            font-style: normal;
+            font-family: Lato, sans-serif;
+            font-size: 14px;
+            margin-top: 5%;
+            padding-left: 8px;
+            color: rgb(51, 51, 51);
+        }
+
+        #mainBox p:nth-child(10) {
+            font-weight: 700;
+            font-style: normal;
+            font-family: Lato, sans-serif;
+            font-size: 14px;
+            margin-top: 5%;
+            padding-left: 8px;
+            color: rgb(51, 51, 51);
+        }
+
+        #mainBox p:nth-child(12) {
+            font-weight: 700;
+            font-style: normal;
+            font-family: Lato, sans-serif;
+            font-size: 14px;
+            line-height: 20px;
+            letter-spacing: 0.2px;
+            margin-top: 5%;
+            padding-left: 8px;
+            color: rgb(51, 51, 51);
+        }
+
+        #mainBox p:nth-child(14) {
+            font-weight: 700;
+            font-style: normal;
+            font-family: Lato, sans-serif;
+            font-size: 13px;
+            margin-top: 8px;
+            margin-left: 8px;
+            margin-bottom: 4px;
+            color: rgb(102, 102, 102);
+        }
+
+        #mainBox p:nth-child(15) {
+            font-weight: 700;
+            font-style: normal;
+            font-family: Lato, sans-serif;
+            font-size: 14px;
+            margin-top: 5%;
+            padding-left: 8px;
+            color: rgb(51, 51, 51);
+        }
+
+        #mainBox p:nth-child(17) {
+            font-weight: 700;
+            font-style: normal;
+            font-family: Lato, sans-serif;
+            font-size: 14px;
+            margin-top: 5%;
+            padding-left: 8px;
+            color: rgb(51, 51, 51);
+        }
+
+        #mainBox p:nth-child(19) {
+            font-weight: 700;
+            font-style: normal;
+            font-family: Lato, sans-serif;
+            font-size: 13px;
+            margin-top: 8px;
+            margin-left: 8px;
+            margin-bottom: 4px;
+            color: rgb(102, 102, 102);
+        }
+
+        .optional {
+            font-weight: 300;
+            font-style: normal;
+            font-family: Lato, sans-serif;
+            font-size: 14px;
+            line-height: 20px;
+            color: rgb(51, 51, 51);
+            margin-left: 8px;
+        }
+
+        #referalBox {
+            background-color: rgb(242, 242, 242);
+            padding: 16px;
+            margin-top: 5%;
+            border-radius: 4px;
+        }
+
+        #ref {
+            margin-top: -1%;
+            font-size: 14px;
+        }
+
+        /* #referal {
+            width: 94%;
+            padding: 20px;
+            margin: 0 auto;
+            border: none;
+            border: solid 1px #aaa2a2;
+            border-radius: 4px;
+        } */
+
+        #referalBox p:last-child {
+            font-weight: 700;
+            font-style: normal;
+            font-family: Lato, sans-serif;
+            font-size: 13px;
+        }
+
+        #continue {
+            width: 99%;
+            padding: 2%;
+            margin-top: 5%;
+            /* margin: 20px 0px 0px 50px; */
+            font-size: 16px;
+            cursor: pointer;
+            /* margin-left: 8px; */
+            /* margin-bottom: 4px; */
+            font-weight: 300;
+            font-style: normal;
+            font-family: Lato, sans-serif;
+            font-size: 14px;
+            border: none;
+            background-color: rgb(51, 51, 51);
+            color: rgb(255, 255, 255);
+        }
+
+        #continue:hover {
+            background-color: rgb(238, 199, 240);
+            text-decoration: underline;
+            color: rgb(46, 45, 45);
+            /* scale: 1.2; */
+        }
+
+        #mainBox p:last-child {
+            font-weight: 300;
+            font-style: normal;
+            font-family: Lato, sans-serif;
+            font-size: 15px;
+            line-height: 20px;
+            letter-spacing: 0.2px;
+            color: #333333;
+            margin-top: 5%;
+        }
+
+        .lastSpan {
+            /* outline: none; */
+            color: rgb(46, 51, 55);
+            /* border: 1px solid transparent; */
+            /* font-weight: 700px; */
+            /* width: auto; */
+            font-weight: 700;
+            cursor: pointer;
+            text-decoration: underline;
+        }
+
+
+        #logo {
+            display: flex;
+            /* grid-template-columns: repeat(2,1fr); */
+            width: 100%;
+            /* border: 2px solid rgb(32, 29, 27); */
+            margin-top: 30px;
+            justify-content: center;
+            align-items: center;
+            justify-content: space-evenly;
+        }
+
+        #fb {
+            width: 30px;
+            margin: 10px;
+            border-radius: 3px;
+            /* height: 24px; */
+        }
+
+        #google {
+            width: 40px;
+            margin: 5px;
+            margin-right: 8px;
+        }
+
+        #logo a {
+            display: flex;
+            width: 46%;
+            border: 1px solid rgb(126, 113, 113);
+            justify-content: center;
+            text-decoration: none;
+        }
+
+        #logo p {
+            display: inline;
+            font-family: Arial, Helvetica, sans-serif;
+            font-weight: bold;
+            font-size: 15px;
+            color: rgb(102, 102, 102);
+
+        }
+
+        #g {
+            margin-left: -8px;
+        }
+
+        @media screen and (max-width: 899px) {
+            #mainBox {
+                width: 80%;
+               
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div id="mainBox">
+        <p>About You</p>
+        <p>Sign Up With</p>
+        <div id="logo">
+            <!-- <button><i class="fa-brands fa-square-facebook"></i> Facebook</button>
+            <button><i class="fa-brands fa-google"></i> Google</button> -->
+
+            <a
+                href="https://www.facebook.com/login.php?skip_api_login=1&api_key=1215984228522362&kid_directed_site=0&app_id=1215984228522362&signed_next=1&next=https%3A%2F%2Fwww.facebook.com%2Fv3.2%2Fdialog%2Foauth%3Fclient_id%3D1215984228522362%26redirect_uri%3Dhttps%253A%252F%252Floginservice.thehut.net%252Ffacebook%252FhandleLogin%26state%3DMzI2RjdDRDFCRTUwMDE3MTY0RUM1MDI3NUMxMTBBOURGMzlCMDc1OTEzMzc3ODJFNDJDRTQ5QzRDOUJGMzZEMA%253D%253D.ZXlKbGVIQnBjbmxVYVcxbElqb3hOamMxTmpjM01qRXhNVGs0TENKamMzSm1WRzlyWlc0aU9pSmtaakk0TVRGa1pTMDNOell4TFRRM09HTXRZVGt5WVMwNE0yRmpNekV4TXpWbE9EWWlMQ0p6YVhSbElqb2lNVEl4SWl3aWMzVmljMmwwWlNJNkluVnpJaXdpWTJ4cFpXNTBVM1JoZEdVaU9pSmxlVXA1V2xoU01XTnROVlZpZVVrMlNXMW9NR1JJUW5wS1ZFNUNTbFJLUjBwVVNrZGtNMlF6VEc1T2NtRlhOWHBrUnpsNVdsTTFhbUl5TUd4TmExcG9XVEpPZG1SWE5UQlRSemwwV2xNMWFGa3lUblprVnpVd1NXNHdYSFV3TUROa0lpd2ljSEp2ZG1sa1pYSWlPaUptWVdObFltOXZheUlzSW5KbFpHbHlaV04wVlhKc0lqb2lhSFIwY0hNNkx5OTNkM2N1YzJ0cGJuTjBiM0psTG1OdmJTOXpiMk5wWVd4QmRYUm9aVzUwYVdOaGRHbHZiaTVoWTJOdmRXNTBJaXdpWm14dmR5STZJbE5JU1VWTVJDSjk%253D%26scope%3Demail%26ret%3Dlogin%26fbapp_pres%3D0%26logger_id%3D4c63eef4-0473-424a-8a1f-a58887b4314c%26tp%3Dunspecified&cancel_url=https%3A%2F%2Floginservice.thehut.net%2Ffacebook%2FhandleLogin%3Ferror%3Daccess_denied%26error_code%3D200%26error_description%3DPermissions%2Berror%26error_reason%3Duser_denied%26state%3DMzI2RjdDRDFCRTUwMDE3MTY0RUM1MDI3NUMxMTBBOURGMzlCMDc1OTEzMzc3ODJFNDJDRTQ5QzRDOUJGMzZEMA%253D%253D.ZXlKbGVIQnBjbmxVYVcxbElqb3hOamMxTmpjM01qRXhNVGs0TENKamMzSm1WRzlyWlc0aU9pSmtaakk0TVRGa1pTMDNOell4TFRRM09HTXRZVGt5WVMwNE0yRmpNekV4TXpWbE9EWWlMQ0p6YVhSbElqb2lNVEl4SWl3aWMzVmljMmwwWlNJNkluVnpJaXdpWTJ4cFpXNTBVM1JoZEdVaU9pSmxlVXA1V2xoU01XTnROVlZpZVVrMlNXMW9NR1JJUW5wS1ZFNUNTbFJLUjBwVVNrZGtNMlF6VEc1T2NtRlhOWHBrUnpsNVdsTTFhbUl5TUd4TmExcG9XVEpPZG1SWE5UQlRSemwwV2xNMWFGa3lUblprVnpVd1NXNHdYSFV3TUROa0lpd2ljSEp2ZG1sa1pYSWlPaUptWVdObFltOXZheUlzSW5KbFpHbHlaV04wVlhKc0lqb2lhSFIwY0hNNkx5OTNkM2N1YzJ0cGJuTjBiM0psTG1OdmJTOXpiMk5wWVd4QmRYUm9aVzUwYVdOaGRHbHZiaTVoWTJOdmRXNTBJaXdpWm14dmR5STZJbE5JU1VWTVJDSjk%253D%23_%3D_&display=page&locale=en_GB&pl_dbl=0">
+                <img id="fb"
+                    src="https://s.yimg.com/fz/api/res/1.2/juUJc2SrROfDI6aUdgrQLQ--~C/YXBwaWQ9c3JjaGRkO2ZpPWZpdDtoPTEyMDtxPTgwO3c9MTIw/https://s.yimg.com/zb/imgv1/c165dc31-f7f7-35c4-8df4-cdd842798724/t_500x300"
+                    alt="facebook">
+                <p>Facebook</p>
+            </a>
+            <!-- </div> -->
+            <!-- <div> -->
+            <a
+                href="https://accounts.google.com/o/oauth2/v2/auth/oauthchooseaccount?client_id=1047782293270-uc6gapukv57blt03hbc6lt82dq80knbc.apps.googleusercontent.com&redirect_uri=https%3A%2F%2Floginservice.thehut.net%2Fgoogle%2FhandleLogin&scope=https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.email%20https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.profile&response_type=code&state=NTMyNDNGMTdDQkYzNjFCRTc3QTZBN0RBM0I1Mjk2NDUxODFBQUVBN0RGQkFFQzNEMTM4RDJCN0FBQjhGRTJEMg%3D%3D.ZXlKbGVIQnBjbmxVYVcxbElqb3hOamMxTmpjMk9URTNNREEyTENKamMzSm1WRzlyWlc0aU9pSmtZamt6WVRkbVlTMWtOemhtTFRRMk9UVXRPV1V6WWkwek9HUTNOR0ZtTm1Sa1pUa2lMQ0p6YVhSbElqb2lNVEl4SWl3aWMzVmljMmwwWlNJNkluVnpJaXdpWTJ4cFpXNTBVM1JoZEdVaU9pSmxlVXA1V2xoU01XTnROVlZpZVVrMlNXMW9NR1JJUW5wS1ZFNUNTbFJLUjBwVVNrZGtNMlF6VEc1T2NtRlhOWHBrUnpsNVdsTTFhbUl5TUd4TmExcG9XVEpPZG1SWE5UQlRSemwwV2xNMWFGa3lUblprVnpVd1NXNHdYSFV3TUROa0lpd2ljSEp2ZG1sa1pYSWlPaUpuYjI5bmJHVWlMQ0p5WldScGNtVmpkRlZ5YkNJNkltaDBkSEJ6T2k4dmQzZDNMbk5yYVc1emRHOXlaUzVqYjIwdmMyOWphV0ZzUVhWMGFHVnVkR2xqWVhScGIyNHVZV05qYjNWdWRDSXNJbVpzYjNjaU9pSlRTRWxGVEVRaWZRPT0%3D&prompt=consent&service=lso&o2v=2&flowName=GeneralOAuthFlow">
+                <img id="google"
+                    src="https://s.yimg.com/fz/api/res/1.2/S3fST7w3xYmfC.ud9K2fvQ--~C/YXBwaWQ9c3JjaGRkO2ZpPWZpdDtoPTEyMDtxPTgwO3c9MTIw/https://s.yimg.com/zb/imgv1/fe90b2b3-0ac3-3c81-8238-d3724bf23104/t_500x300"
+                    alt="google">
+                <p id="g">Google</p>
+            </a>
+
+        </div>
+        <hr>
+        <p>Or create an email account</p>
+        <p>* Full Name</p>
+        <input type="text" id="name">
+        <p>* Email address</p>
+        <input type="text" id="email">
+        <p>* Confirm Email address</p>
+        <input type="text" id="confirmEmail">
+        <p>* Password</p>
+        <input type="text" id="password">
+        <p>Include a minimum of 6 characters, and contain at least 1 number</p>
+        <p>* Confirm Password</p>
+        <input type="text" id="confirmPassword">
+        <p>Cell Phone Number <span class="optional">(Optional)</span></p>
+        <input type="text" id="mobile">
+        <p>We will use this number to send occasional promotional messages.</p>
+        <div id="referalBox">
+            <p id="ref">Referral Code <span class="optional">(Optional)</span></p>
+            <input type="text" id="referal">
+            <p>* Your referrals discount is automatically applied at cart</p>
+        </div>
+        <button id="continue">CONTINUE</button>
+        <p>By proceeding, you are confirming that you agree to our <span class="lastSpan">Terms and Conditions</span>
+            and <span class="lastSpan">Privacy
+                Policy</span></p>
+    </div>
+
+</body>
+
+</html>
