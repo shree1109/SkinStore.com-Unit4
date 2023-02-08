@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        #container {
+            width: 80%;
+            margin: auto;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        #div1 {
+            padding: 10px;
+            width: 55%;
+            display: flex;
+            justify-content: space-between;
+            flex-direction: column;
+        }
+
+        #div2 {
+            padding: 15px;
+            width: 30%;
+        }
+
+        .checked {
+            color: orange;
+        }
+
+        .fa-heart {
+            font-size: 20px;
+            color: rgb(219, 46, 46);
+        }
+
+        .fa-star {
+            font-size: 20px;
+        }
+
+        #imgOfProduct {
+            display: block;
+            margin: auto;
+            width: 50%;
+            height: 420px;
+            object-fit: contain;
+            transition: 0.3s;
+        }
+
+        #imgOfProduct:hover {
+            transform: scale(1.3);
+            cursor: pointer;
+        }
+
+        #prod_name {
+            font-size: 34px;
+            font-weight: 100;
+            margin-bottom: 30px;
+        }
+
+        #starRating {
+            font-size: 14px;
+            display: flex;
+            margin-bottom: 30px;
+        }
+
+        #ratingStar p {
+            padding-left: 10px;
+        }
+
+        #prod_price {
+            font-weight: 200;
+            margin-bottom: 10px;
+        }
+
+        #quantity_Items {
+            width: 90%;
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            text-align: center;
+        }
+
+        #quantity_Items>div {
+            display: flex;
+            width: fit-content;
+        }
+
+        #quantity_Items>div>input {
+            margin-left: 18px;
+            width: 40px;
+            font-size: 20px;
+        }
+
+        .hr1 {
+            margin: 10px 0px 10px 0px;
+            height: 0.8px;
+            background-color: gray;
+        }
+
+        #decrease,
+        #increase {
+            width: 40px;
+            background-color: rgb(240, 236, 236);
+            font-size: 24px;
+        }
+
+        #decrease:hover,
+        #increase:hover {
+            background: rgb(201, 232, 245);
+            color: black;
+            cursor: pointer;
+        }
+
+        #addingToTheCart {
+            display: block;
+            width: 80%;
+            padding: 10px;
+            margin: auto;
+            color: white;
+            background: black;
+        }
+
+        #addingToTheCart:hover {
+            background-color: RGB(40, 189, 183);
+            color: black;
+            cursor: pointer;
+        }
+
+        #prodWishlist {
+            width: 40%;
+            justify-content: space-between;
+            display: flex;
+            font-size: 16px;
+            margin: 10px 0px;
+        }
+
+        .divPara {
+            font-size: 14px;
+            color: gray;
+            margin: 10px 0px;
+        }
+
+        .voucher {
+            border: 1px solid rgb(238, 21, 21);
+            background: white;
+            font-size: 14px;
+            color: gray;
+            padding: 4px;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="container">
+        <div id="div1">
+            <img src="" alt="">
+        </div>
+        <div id="div2"></div>
+    </div>
+</body>
+
+</html>
+<script>
+    var data = JSON.parse(localStorage.getItem("indexVal")) || [];
+
+    let leftAppend = (data) => {
+        document.querySelector("#div1").innerHTML = `  
+<img id="imgOfProduct" src="${data.img}">`;
+    }
+    leftAppend(data);
+
+
+    let rightAppend = (data) => {
+        document.querySelector("#div2").innerHTML = `<h2 id="prod_name" >${data.brand} ${data.description}</h2>
+    <div id="starRating">   
+        <span class="fa fa-star checked"></span>
+        <span class="fa fa-star checked"></span>
+        <span class="fa fa-star checked"></span>
+        <span class="fa fa-star checked"></span>
+        <span class="fa fa-star"></span> 
+        <p>5 Reviews</p>
+    </div>
+
+    <h1 id="prod_price"> ₹${data.finalPrice} </h1>
+    <hr class="hr1">
+            
+    <div id="quantity_Items">
+        <p>Quantity</p>
+        <div>
+            <button id="decrease">-</button>
+            <input  type="number"  id="changeQuantity" min="1" max="5" readonly value="1">
+            <button id="increase">+</button>  
+        </div>
+    </div>
+
+    <button id="addingToTheCart">ADD TO CART</button>
+    <hr class="hr1">
+
+    <div id="prodWishlist">
+        <div>
+            <i class="fa fa-heart"></i>
+        </div>
+        <p>Save to Wishlist</p>
+    </div>
+    
+            <p class="divPara">In stock</p>
+            <button class="voucher">₹1000 Gift Voucher</button>
+            <p >Get a Gift Voucher worth ₹1000</p> 
+            <hr class="hr1">
+            <p class="divPara">Receive a Space Defence Bright Eye Lift Gel Mini 7.5ml (Worth ₹1000) when you spend ₹5000 or more
+            on the brand. Offer valid for a limited time only, while stocks last.</p>
+            <button class="shopNow">SHOP NOW</button>`;
+    }
+    rightAppend(data);
+
+    //Quantity + -
+
+    var countQ = document.querySelector("#changeQuantity").value;
+    document.querySelector("#decrease").addEventListener("click", decrease);
+    document.querySelector("#increase").addEventListener("click", increase);
+
+    function decrease() {
+        if (countQ == 1) {
+            alert("Quantity must Greater than 0");
+        } else {
+            countQ--;
+            document.querySelector("#changeQuantity").value = countQ;
+        }
+    }
+
+    function increase() {
+        countQ++;
+        document.querySelector("#changeQuantity").value = countQ;
+    }
+    //Add to Cart
+    document.querySelector("#addingToTheCart").addEventListener("click", itemsAdded);
+
+
+    function itemsAdded() {
+        var items = JSON.parse(localStorage.getItem("indexVal"));
+        sendDataToCart(data);
+    }
+</script>
