@@ -258,7 +258,6 @@
                 <option value="AZ">A-Z</option>
                 <option value="ZA">Z-A</option>
                 <option value="MaxPerDis">Max. Percentage Discount</option>
-                <option value="Newest Arrival">Newest Arrival</option>
             </select>
       
             </div>
@@ -293,6 +292,7 @@
             div.setAttribute("id","page");
             div.addEventListener("click",function(){
                 storeindex(elem);
+                location.href='prodDetails.html';
             })
             
             
@@ -373,7 +373,7 @@ var cart= JSON.parse(localStorage.getItem("cart-data")) || [];
             });
             
             }
-            if( document.querySelector("#sortProduct").value==="AZ"){
+            if( document.querySelector("#sortProduct").value=="AZ"){
                 printData.sort(function(a,b) {
                 return a.brand > b.brand;
             });
@@ -392,7 +392,7 @@ var cart= JSON.parse(localStorage.getItem("cart-data")) || [];
             }
             if( document.querySelector("#sortProduct").value==="Default"){
                 printData.sort(function(a,b) {
-                return a,b;
+                return true;
             });
             }
             console.log(printData);
