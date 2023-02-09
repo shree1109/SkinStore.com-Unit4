@@ -206,6 +206,13 @@
             padding: 4px;
             margin-bottom: 10px;
         }
+        #changeQuantity{
+            text-align: center;
+            padding: auto;
+           align-content:  center;
+            /* margin-left: -10px; */
+            /* padding-left: 20px; */
+        }
     </style>
 </head>
 
@@ -289,7 +296,7 @@
         <p>5 Reviews</p>
     </div>
 
-    <h1 id="prod_price"> ₹${data.finalPrice} </h1>
+    <h1 id="prod_price"> ₹ ${data.finalPrice}/- </h1>
     <hr class="hr1">
             
     <div id="quantity_Items">
@@ -333,14 +340,14 @@
         } else {
             countQ--;
             document.querySelector("#changeQuantity").value = countQ;
-            document.querySelector("#prod_price").textContent = "₹" + (data.finalPrice) * countQ;
+            document.querySelector("#prod_price").textContent = "₹ " + ((data.finalPrice) * countQ) + "/-";
         }
     }
 
     function increase() {
         countQ++;
         document.querySelector("#changeQuantity").value = countQ;
-        document.querySelector("#prod_price").textContent = "₹" + (data.finalPrice) * countQ;
+        document.querySelector("#prod_price").textContent = "₹ " + ((data.finalPrice) * countQ) + "/-";
     }
     //Add to Cart
     document.querySelector("#addingToTheCart").addEventListener("click", addToCart);
