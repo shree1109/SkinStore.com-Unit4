@@ -303,7 +303,7 @@
         <p>Quantity</p>
         <div>
             <button id="decrease">-</button>
-            <input  type="number"  id="changeQuantity" min="1" max="5" readonly value="1">
+            <input  type="number"  id="changeQuantity" readonly value=${data.Qty}>
             <button id="increase">+</button>  
         </div>
     </div>
@@ -330,6 +330,7 @@
 
     //Quantity + -
 
+    var cart = JSON.parse(localStorage.getItem("indexVal"));
     var countQ = document.querySelector("#changeQuantity").value;
     document.querySelector("#decrease").addEventListener("click", decrease);
     document.querySelector("#increase").addEventListener("click", increase);
@@ -339,6 +340,7 @@
             alert("Quantity must Greater than 0");
         } else {
             countQ--;
+            //cart[0].Qty= countQ;
             document.querySelector("#changeQuantity").value = countQ;
             document.querySelector("#prod_price").textContent = "₹ " + ((data.finalPrice) * countQ) + "/-";
         }
@@ -351,12 +353,20 @@
     }
     //Add to Cart
     document.querySelector("#addingToTheCart").addEventListener("click", addToCart);
-    var cart = JSON.parse(localStorage.getItem("cart-data")) || [];
+    
+    var cartData=JSON.parse(localStorage.getItem("cart-data")) || [];
+
 
     function addToCart() {
-        cart.push(data);
+        cart.Qty= countQ;
+        cart.finalPrice *= countQ;
+        cartData.push(cart);
         console.log(cart);
-        localStorage.setItem("cart-data", JSON.stringify(cart));
+
+
+        // console.log(cart.finalPrice);
+        localStorage.setItem("cart-data", JSON.stringify(cartData)); 
+       
         alert("Product has been added to the Cart");
     }
 
