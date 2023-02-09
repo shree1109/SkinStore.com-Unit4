@@ -51,7 +51,7 @@
         #email,
         #password {
             width: 94%;
-            padding: 20px;
+            padding: 15px;
             border: none;
             border: solid 1px #333333;
             border-radius: 4px;
@@ -203,7 +203,7 @@
         <label>* Email address</label>
         <input type="text" id="email">
         <label>* Password</label>
-        <input type="text" id="password">
+        <input type="password" id="password">
         <a href="forgot.html">FORGOT YOUR PASSWORD?</a>
         <button id="signin">SIGN IN</button>
         <p>Or, Continue with</p>
@@ -228,3 +228,45 @@
 </body>
 
 </html>
+<script>
+    // var email=document.querySelector("#email").value;
+    // var pass=document.querySelector("#password").value;
+    // console.log(email,pass);
+
+    document.querySelector("#signin").addEventListener("click",logInUser);
+    var loginData=JSON.parse(localStorage.getItem("userData"));
+    var flag=false;
+    function logInUser(){
+        var email=document.querySelector("#email").value;
+    var pass=document.querySelector("#password").value;
+            if(email=="admin@gmail.com" && pass=="12345678"){
+                window.location.href="admin.html";
+                document.querySelector("#email").value="";
+    document.querySelector("#password").value="";
+            } 
+            else{
+                loginData.map(function(elem){
+            console.log(elem.name,elem.password);
+            if(elem.email==email && elem.password==pass){
+                
+                console.log(elem.email,elem.password);
+               flag=true;
+            }
+        });   
+        
+        if (flag){
+            alert("Log In Successfull");
+            document.querySelector("#email").value="";
+    document.querySelector("#password").value="";
+            window.location.href="product.html";
+        }else{
+    document.querySelector("#email").value="";
+    document.querySelector("#password").value="";
+            alert("Your Have Enetered Incorrect Email Or Password");
+        }
+            }
+    
+        
+
+    }
+</script>

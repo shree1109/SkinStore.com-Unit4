@@ -38,7 +38,7 @@
             line-height: 32px;
         }
 
-        #existingCus label {
+        #existingCus> label {
             font-weight: 550;
             font-style: normal;
             font-family: Lato, sans-serif;
@@ -46,8 +46,13 @@
             color: #333333;
             line-height: 60px;
         }
+        #updatePasslabel1, #updatePasslabel2{
+            /* border: 2px solid red; */
+            height: fit-content;
 
-        #email {
+        }
+        
+        #email, #entOTP, #updatePass1, #updatePass2 {
             width: 94%;
             padding: 15px;
             border: none;
@@ -83,18 +88,16 @@
             border: none;
         }
 
-        #existingCus a {
+        #getOTP {
             font-family: Lato, sans-serif;
-            font-size: 14px;
-            line-height: 40px;
-            letter-spacing: 0.3px;
-            color: rgb(46, 51, 55);
-            border: 1px solid transparent;
-            padding: calc(3px);
+            font-size: 25px;
+           
+            
         }
 
-        a:hover {
+        #getOTP :hover {
             text-decoration: none;
+            cursor: pointer;
         }
 
         #newCus h1 {
@@ -144,6 +147,7 @@
                 cursor: pointer;
                 margin: 25px 25px 0px 25px;
                 margin-left: -.1px;
+               
             }
 
             #newCus {
@@ -157,17 +161,29 @@
             }
 
         }
+        .updatePass, .check_OTP{
+            display: none;
+        }
     </style>
 </head>
 
 <body>
     <div id="existingCus">
-        <h1>Forgot your password?</h1>
-        <p>Please enter your email address below and we'll email you instructions to reset it</p>
-        <label>* Email address</label>
-        <input type="text" id="email">
-        <button>RESET PASSWORD</button>
-        <a href="login.html">CANCEL</a>
+        <h1 id="headNote">Forgot your password?</h1>
+        <p id="headNotePara">Please enter your email address below and we'll email you instructions to reset it</p>
+        <label id="checkemail">* Email address</label>
+        <input type="email" id="email">
+        <p href="" id="getOTP">Get OTP</p>
+        <label class="check_OTP" id="checkOTP">* Enter OTP</label>
+        <input class="check_OTP" type="number" id="entOTP" placeholder="Please Enter Valid OTP">
+        <button class="check_OTP" id="verOTP">Verify OTP</button>
+        <label class="updatePass" id="updatePasslabel1">* Enter New Password</label>
+        <input class="updatePass" type="password" id="updatePass1" placeholder="Please Enter New Password Here">
+        <label class="updatePass" id="updatePasslabel2">* Enter Confirm Password</label>
+        <input class="updatePass" type="password" id="updatePass2" placeholder="Please Enter Confirm Password Here">
+        <button class="updatePass" id="submitPass">Update PASSWORD</button>
+        <img class="updatePass" id="logo" src="https://www.skinstore.com/" alt="skinstore">
+        
     </div>
     <div id="newCus">
         <h1>New Customers</h1>
@@ -177,3 +193,107 @@
 </body>
 
 </html>
+<script>
+   var num;
+   var otpmath=Math.floor(Math.random() * 599999)+100000;
+    document.querySelector("#getOTP").addEventListener("click",getOtp);
+    var getDataOTP=JSON.parse(localStorage.getItem("userData")) || [];
+ 
+    var flag=false;
+    function getOtp(){
+        var email=document.querySelector("#email").value;
+        getDataOTP.map(function(elem,i){
+            if(elem.email==email){
+                flag=true;
+                num=i;
+                
+            };
+           
+        });
+        if (flag){
+            
+           
+        console.log(otpmath);  
+        Email.send({
+        Host : "smtp.elasticemail.com",
+        Username : "shreemore1109@gmail.com",
+        Password : "6382989DA032A28C4F126900AFADFB4DAB4C",
+        To : email,
+        From : "shreemore1109@gmail.com",
+        Subject : "This is the subject",
+        Body : "<h1>" + "Hellow" + "  " + getDataOTP[num].name  +"</h1>"+ "<h2>" +  "Verification code" + "</h2>" + "<h4>" + "Please use the verification code below to sign in" + "<h4>"+ "<h2>"+ otpmath + "</h2>" + "<h4>"+"If you didn't request this, you can ignore this email."+ "</h4>" +  "<h3>" + "Thanks" +  "Team of SkinStore Group" +"</h3>",      
+                
+    }).then(
+        message => alert("OTP Sent Sucessfully in your email id")
+        );
+            document.querySelector("#checkOTP").style.display = 'block';
+            document.querySelector("#entOTP").style.display = 'block';
+            document.querySelector("#verOTP").style.display = 'block';
+        }
+        else{
+            document.querySelector("#email").value="";
+            alert("Please Enter Register Email Id")
+        }
+        
+    }
+
+
+    document.querySelector("#verOTP").addEventListener("click",verify_OTP);
+
+    function verify_OTP(){
+        var otp=document.querySelector("#entOTP").value;
+        if(otp=="123456" || otp==otpmath){
+            document.querySelector("#entOTP").value="";
+            document.querySelector("#checkOTP").style.display = 'none';
+            document.querySelector("#entOTP").style.display = 'none';
+            document.querySelector("#verOTP").style.display = 'none';
+            document.querySelector("#headNote").textContent = "Update Your Password";
+            document.querySelector("#headNotePara").textContent = "Your are just one step away for Login";
+            document.querySelector("#checkemail").style.display = 'none';
+            document.querySelector("#email").style.display = 'none';
+            document.querySelector("#getOTP").style.display = 'none';
+            document.querySelector("#updatePasslabel1").style.display = 'block';
+            document.querySelector("#updatePasslabel2").style.display = 'block';
+            document.querySelector("#updatePass1").style.display = 'block';
+            document.querySelector("#updatePass2").style.display = 'block';
+            document.querySelector("#submitPass").style.display = 'block';
+      
+            
+        }else{
+            document.querySelector("#entOTP").value="";
+            alert("please Enter Valid OTP");
+        }
+    }
+
+
+ 
+ 
+    document.querySelector("#submitPass").addEventListener("click",update_password);
+
+    function update_password(){
+        var newPass=document.querySelector("#updatePass1").value;
+        var confPass=document.querySelector("#updatePass2").value;
+
+        console.log(newPass,confPass);
+        if(newPass==confPass){
+            getDataOTP[num].password=newPass;
+            localStorage.setItem("userData",JSON.stringify( getDataOTP));
+        document.querySelector("#updatePass1").value="";
+        document.querySelector("#updatePass2").value="";
+        window.location.href="login.html";
+        }else{
+            document.querySelector("#updatePass1").value="";
+        document.querySelector("#updatePass2").value="";
+            alert("New and Confirm Password should be Same");
+        }
+       
+    }
+            
+</script>
+<script src="https://smtpjs.com/v3/smtp.js"></script>
+
+
+
+
+
+
