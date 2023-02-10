@@ -5,7 +5,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>skinstore-Product Page</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400&display=swap" rel="stylesheet">
+
     <style>
+        body{
+            
+            font-family: 'Lato', sans-serif,Helvetica,Arial;
+        }
         #child-1{
             padding: 15px;
             box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
@@ -58,13 +66,13 @@
 
         #subchiled-1>h1{
             font-size: 42px;
-            font-family: Arial, Helvetica, sans-serif;
+           
             font-weight: 700;
             }
             #subchiled-1>p{
             font-size: 12px;
             line-height: 19.6px;
-            font-family: Arial, Helvetica, sans-serif;
+         
             font-weight: 300;
             color: #2E3337;
     
@@ -102,7 +110,6 @@
             color: white;
             line-height:18px;
             font-size: 16px;
-            font-family: Arial, Helvetica, sans-serif;
             border: none;
             margin-top: 25px;
 
@@ -139,9 +146,10 @@
             display: block;
                     }
         #subchild-1-1{
-            width: 50%;
+            width: 100%;
             display: flex;
             justify-content: space-between;
+            justify-content: space-evenly;
             /* align-content: center;
             align-items: center;
             text-align: center; */
@@ -150,46 +158,97 @@
        
             display: flex;
             justify-content: space-between;
+            align-items: center;
             /* align-content: center;
             align-items: center;
             text-align: center; */
         }
+        #displayPages {
+        text-align: center;
+            margin: auto;
+            margin-right: 0px;
+            
+        }
+        #displayPages>p {
+        text-align: center;
+        text-align: bottom;
+            font-size: 20px;
+            margin-right: 10px;
+            
+        }
+        #pagenum{
+            text-align: end;
+        }
+        #displayPages >buttoninput  {
+     margin: 0px 7px;
+        }
 
-   
+        #displayPages >input,  #pagenum>input{
+            width: 10px;
+            padding: 13px;
+            background-color: white;
+            border:1px solid gray;
+            cursor: pointer;
+        }
+        /* .brandfilter{
+            
+            border-radius: -300px;
+            border:1px gray;
+            
+        
+            
+        } */
 
         /*         Product Display           START                */
+        #displayheading{
+            font-size: 42px;
+            line-height:58.8px;
+            font-weight:700;
+        }
+        #brandTotalProduct,#catgTotalProduct, #priceTotalProduct, #discTotalProduct, #genderTotalProduct, #idTotalProduct{
+            font-size: 18px;
+            line-height: 19.2px;
+            font-weight: 700;
+        }
+
+        .sortlabel{
+            font-size: 16px;
+            font-weight: 400;
+        }
 
         
         #prodes{
            height: 40px;
          }
         #priceAmount {
-              
+
                display: flex;
                align-items: center;
+               height: 10px;
  
          } 
        #priceAmount >p:nth-child(1){
            
-            font-size: 26px;
-            font-weight: 640;
-            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-            line-height: 0px;
+            font-size: 20px;
+            font-weight: 700;
+          margin-right: 10px;
+            line-height: 19.2px;
 
      
          } 
          #priceAmount >p:nth-child(2){
 
-            font-size: 20x;
-            font-weight: 640;
+            font-size: 15px;
+            font-weight: 700;
             /* font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; */
             padding: 5px; 
+            line-height: 19.2px;
             text-decoration: line-through;
             color: rgb(221, 20, 20);
      
          } 
          #page p:nth-child(4){
-            font-style: italic;
+            /* font-style: italic; */
             font-size: 16px;
             color: green;
             text-align: end;
@@ -211,95 +270,93 @@
         <div id="child-1">
             <h2>Refine</h2>
             <button>
-                <h3>Brand</h3>
+                <h3 id="brandTotalProduct">Brand</h3>
             </button>
-            <input type="checkbox" value="111SKIN" name="111SKIN" id="" class="brandfilter">
-            <label for="111SKIN" >111SKIN</label><br>
 
-            <input type="checkbox" value="3LAB" name="3LAB" id="" class="brandfilter">
-            <label for="3LAB" >3LAB</label><br>
+            <input type="radio" value="3LAB" name="brand" id="" class="brandfilter">
+            <label class="sortlabel" for="3LAB" >3LAB</label><br>
 
-            <input type="checkbox" value="Act+Acre" name="Act+Acrer" id="" class="brandfilter">
-            <label for="Act+Acre" >Act+Acre</label><br>
+            <input type="radio" value="Act+Acre" name="brand" id="" class="brandfilter">
+            <label  class="sortlabel" for="Act+Acre" >Act+Acre</label><br>
 
-            <input type="checkbox" value="Aesop" name="" id="" class="brandfilter">
-            <label for="" >Aesop</label><br>
+            <input type="radio" value="Aesop" name="brand" id="" class="brandfilter">
+            <label  class="sortlabel" for="" >Aesop</label><br>
             
-            <input type="checkbox" value="AHAVA" name="AHAVA" id="" class="brandfilter">
-            <label for="AHAVA" >AHAVA</label><br>
+            <input type="radio" value="AHAVA" name="brand" id="" class="brandfilter">
+            <label class="sortlabel" for="AHAVA" >AHAVA</label><br>
 
-            <input type="checkbox" value="By Terry" name="By Terry" id="" class="brandfilter">
-            <label for="By Terry" >By Terry</label><br>
+            <input type="radio" value="By Terry" name="brand" id="" class="brandfilter">
+            <label  class="sortlabel" for="By Terry" >By Terry</label><br>
 
-            <input type="checkbox" value="Chantecaille" name="Chantecaille" id="" class="brandfilter">
-            <label for="Chantecaille" >Chantecaille</label><br>
+            <input type="radio" value="Chantecaille" name="brand" id="" class="brandfilter">
+            <label class="sortlabel" for="Chantecaille" >Chantecaille</label><br>
 
-            <input type="checkbox" value="Colorescience" name="Colorescience" id="" class="brandfilter">
-            <label for="Colorescience" >Colorescience</label><br>
+            <input type="radio" value="Colorescience" name="brand" id="" class="brandfilter">
+            <label  class="sortlabel" for="Colorescience" >Colorescience</label><br>
 
-            <input type="checkbox" value="Confessions of a Rebel" name="Confessions of a Rebel" id="" class="brandfilter">
-            <label for="Colorescience" >Colorescience</label><br>
+            <input type="radio" value="Confessions of a Rebel" name="brand" id="" class="brandfilter">
+            <label class="sortlabel" for="Colorescience" >Colorescience</label><br>
 
-            <input type="checkbox" value="Cowshed" name="Cowshed" id="" class="brandfilter">
-            <label for="Cowshed" >Cowshed</label><br>
+            <input type="radio" value="Cowshed" name="brand" id="" class="brandfilter">
+            <label  class="sortlabel" for="Cowshed" >Cowshed</label><br>
 
-            <input type="checkbox" value="Daily Concepts" name="Daily Concepts" id="" class="brandfilter">
-            <label for="Daily Concepts" >Daily Concepts</label><br>
+            <input type="radio" value="Daily Concepts" name="brand" id="" class="brandfilter">
+            <label class="sortlabel" for="Daily Concepts" >Daily Concepts</label><br>
 
-            <input type="checkbox" value="Ellis Brooklyn" name="Ellis Brooklyn" id="" class="brandfilter">
-            <label for="Ellis Brooklyn" >Ellis Brooklyn</label><br>
+            <input type="radio" value="Ellis Brooklyn" name="brand" id="" class="brandfilter">
+            <label  class="sortlabel" for="Ellis Brooklyn" >Ellis Brooklyn</label><br>
 
-            <input type="checkbox" value="ESPA" name="ESPA" id="" class="brandfilter">
-            <label for="ESPA" >ESPA</label><br>
+            <input type="radio" value="ESPA" name="brand" id="" class="brandfilter">
+            <label class="sortlabel" for="ESPA" >ESPA</label><br>
 
-            <input type="checkbox" value="Estée Lauder" name="Estée Lauder" id="" class="brandfilter">
-            <label for="Estée Lauder" >Estée Lauder</label><br>
-       
 
-            <button>
-                <h3>Skincare Cetegory</h3>
-            </button>
-            <input type="checkbox" value="bath&Body" name="" id="" class="catgfilter">
-            <label for="">Bath & Body</label><br>
-            <input type="checkbox" value="fragrance" name="" id="" class="catgfilter">
-            <label for="">Fragrance</label><br>
-            <input type="checkbox" value="hair" name="" id="" class="catgfilter">
-            <label for="">Hair</label><br>
-            <input type="checkbox" value="makeup" name="" id="" class="catgfilter">
-            <label for="">Makeup</label><br>
-            <input type="checkbox" value="skincare" name="" id="" class="catgfilter">
-            <label for="">skincare</label><br>
+            <input type="radio" value="Estée Lauder" name="Estée Lauder" id="" class="brandfilter">
+            <label class="sortlabel" for="Estée Lauder" >Estée Lauder</label><br>
+          
 
             <button>
-                <h3>Price</h3>
+                <h3 id="catgTotalProduct"> Skincare Cetegory</h3>
             </button>
-            <input type="checkbox"  value="htl" name="Cream" id="" class="pricefilter" >
-            <label for="Cream">High To Low</label><br>
-            <input type="checkbox"  value="lth" name="Cream" id="" class="pricefilter" >
-            <label for="Cream">Low to High</label><br>
-            <input type="checkbox"  value="0to1" name="Cream" id="" class="pricefilter" >
-            <label for="Cream">Rs. 0/- to Rs. 1,000/- </label><br>
-                <input type="checkbox"  value="2to5" name="Cream" id="" class="pricefilter" >
-                <label for="Cream">Rs. 1,001/- to Rs. 5,000/- </label><br>
-                    <input type="checkbox"  value="6to10" name="Cream" id="" class="pricefilter" >
-                    <label for="Cream">Rs. 5,001/- to Rs. 10,000/- </label><br>
-                        <input type="checkbox"  value="11" name="Cream" id="" class="pricefilter" >
-                        <label for="Cream">More Than Rs. 10,000/- </label><br>
+            <input type="radio" value="bath&Body" name="catg" id="" class="catgfilter">
+            <label class="sortlabel" for="">Bath & Body</label><br>
+            <input type="radio" value="fragrance" name="catg" id="" class="catgfilter">
+            <label class="sortlabel" for="">Fragrance</label><br>
+            <input type="radio" value="hair" name="catg" id="" class="catgfilter">
+            <label class="sortlabel" for="">Hair</label><br>
+            <input type="radio" value="makeUp" name="catg" id="" class="catgfilter">
+            <label class="sortlabel" for="">Makeup</label><br>
+            <input type="radio" value="skinCare" name="catg" id="" class="catgfilter">
+            <label  class="sortlabel" for="">skincare</label><br>
+
+            <button>
+                <h3 id="priceTotalProduct">Price</h3>
+            </button>
+            <input type="radio"  value="1" name="Cream" id="" class="pricefilter" >
+            <label class="sortlabel" for="Cream">0 - 1,000</label><br>
+            <input type="radio"  value="2" name="Cream" id="" class="pricefilter" >
+            <label class="sortlabel" for="Cream">1001 - 3,000</label><br>
+            <input type="radio"  value="3" name="Cream" id="" class="pricefilter" >
+            <label class="sortlabel" for="Cream">3001 - 5,000</label><br>
+                <input type="radio"  value="4" name="Cream" id="" class="pricefilter" >
+                <label class="sortlabel" for="Cream">5001 - 10,000 </label><br>
+                    <input type="radio"  value="4" name="Cream" id="" class="pricefilter" >
+                    <label class="sortlabel" for="Cream">Greater than 10,000/- </label><br>
+                   
            
             <button>
 
-                <h3>Discount</h3>
+                <h3 id="discTotalProduct">Discount</h3>
             </button>
-            <input type="checkbox" name="" value="HTL" id="" class="discfilter">
-            <label for="">High to Low</label><br>
-            <input type="checkbox" name="" value="LTH" id="" class="discfilter">
-            <label for="">Low To Low</label><br>
-            <input type="checkbox" name="" value="0to30" id="" class="discfilter">
-            <label for="">Less than 30%</label><br>
-            <input type="checkbox" name="" value="31to50" id="" class="discfilter">
-            <label for="">30% to 50%</label><br>
-            <input type="checkbox" name="" value="50" id="" class="discfilter">
-            <label for="">More than 50%</label><br>
+            <input type="radio" name="percent" value="1" id="" class="discfilter">
+            <label class="sortlabel" for="">Less than 10%</label><br>
+            <input type="radio" name="percent" value="2" id="" class="discfilter">
+            <label class="sortlabel" for="">10% to 20% </label><br>
+            <input type="radio" name="percent" value="3" id="" class="discfilter">
+            <label class="sortlabel" for="">21% to 30% </label><br>
+            <input type="radio" name="percent" value="4" id="" class="discfilter">
+            <label class="sortlabel" for="">31% to 50%</label><br>
+            <input type="radio" name="percent" value="5" id="" class="discfilter">
+            <label class="sortlabel" for="">More than 50%</label><br>
 
         
         
@@ -308,32 +365,32 @@
         
 
 
-                <h3>Gender</h3>
+                <h3 id="genderTotalProduct">Gender</h3>
             </button>
-            <input type="checkbox" name="Boys" id="">
-            <label for="Boys">Boys (16)</label><br>
-            <input type="checkbox" name="Girls" id="">
-            <label for="Girls">Girls (16)</label><br>
-            <input type="checkbox" name="Men" id="">
-            <label for="Men">Men (1896)</label><br>
-            <input type="checkbox" name="Women" id="">
-            <label for="Women">Women (3014)</label><br>
+            <input type="radio" name="gender" id="">
+            <label class="sortlabel" for="Boys">Boys (16)</label><br>
+            <input type="radio" name="gender" id="">
+            <label class="sortlabel" for="Girls">Girls (16)</label><br>
+            <input type="radio" name="gender" id="">
+            <label class="sortlabel" for="Men">Men (1896)</label><br>
+            <input type="radio" name="gender" id="">
+            <label class="sortlabel" for="Women">Women (3014)</label><br>
 
             <button>
         
-                <h3>Average Reviews</h3>
+                <h3 id="idTotalProduct">Average Reviews</h3>
             </button>
             <input type="checkbox" name="2-3" id="">
-            <label for="2-3">2-3 (25)</label><br>
+            <label class="sortlabel" for="2-3">2-3 (25)</label><br>
             <input type="checkbox" name="3-4" id="">
-            <label for="3-4">3-4 (122)</label><br>
+            <label  class="sortlabel" for="3-4">3-4 (122)</label><br>
             <input type="checkbox" name="4+" id="">
-            <label for="4+">4+ (1129)</label><br>
+            <label class="sortlabel" for="4+">4+ (1129)</label><br>
 
         </div>
         <div id="child-2">
             <div id="subchild-1">
-                <h1>View All Skincare</h1>
+                <h1 id="displayheading">View All Skincare</h1>
                 <p>3489 Results</p>
                 <p>Radiant skin starts with effective skincare, and here at SkinStore we’ve curated the very best
                     skincare brands. Shop with the peace of mind of our 20 years experience as an authorized retailer
@@ -353,15 +410,11 @@
             </select>
         </div>
                 <div id="displayPages">
-                    <button><i class="fa-solid fa-backward-step"></i>
-                        
-                    </button> 
+
                    <div id="pagenum">
 
                    </div>
-                   <button><i class="fa-solid fa-forward-step"></i>
-                        
-                   </button> 
+                 
                 </div>
            
         </div>
@@ -369,7 +422,7 @@
             
             <div id="subchild-2">
 
-
+               
             </div>
         </div>
             
@@ -443,7 +496,7 @@
             addcart.setAttribute("id","addcartbtn" )
             addcart.addEventListener("click",function(){
                 addToCart(elem);
-                console.log(elem);
+                
             });
 
             if (elem.discount==0){
@@ -456,11 +509,11 @@
             }
             
             div.addEventListener("mouseover",function(){
-                console.log("isubc");
+          
                 img.setAttribute("src",elem.img2);
             })
             div.addEventListener("mouseout",function(){
-                console.log("isubc");
+              
                 img.setAttribute("src",elem.img);
             })
 
@@ -470,7 +523,7 @@
 
         });
     }
-var cart= JSON.parse(localStorage.getItem("cart-data")) || [];
+    var cart= JSON.parse(localStorage.getItem("cart-data")) || [];
     function addToCart(elem){
         cart.push(elem);
         localStorage.setItem("cart-data",JSON.stringify(cart));
@@ -484,7 +537,7 @@ var cart= JSON.parse(localStorage.getItem("cart-data")) || [];
     function sort_Data(){
         if( document.querySelector("#sortProduct").value==="Default"){
                 printData.sort(function(a,b) {
-                return a.id -b.id;
+                return a.Id -b.Id;
             });
             }
         
@@ -518,8 +571,8 @@ var cart= JSON.parse(localStorage.getItem("cart-data")) || [];
                 return b.discount - a.discount;
             });
             }
-         
-            console.log(printData);
+            document.querySelector("#displayheading").textContent= "View All Skincare";
+            // console.log(printData);
             displayProduct(printData);
     }
  
@@ -528,35 +581,186 @@ var cart= JSON.parse(localStorage.getItem("cart-data")) || [];
     console.log(elem);
     localStorage.setItem("indexVal",JSON.stringify(elem))
  }
-
- var filterarr=document.querySelectorAll(".brandfilter");
-    console.log(filterarr);
- var filtcatg=document.querySelectorAll(".filtercatg");
-    filterarr.forEach(element => {
+        /*            brand                     */
+        var filt_Data;
+ var filt_Arr=document.querySelectorAll(".brandfilter");
+//  var filtcatg=document.querySelectorAll(".filtercatg");
+    filt_Arr.forEach(element => {
             element.addEventListener("change",function(e){
                 e.target.value;
                 console.log(e.target.value);
-                var filt_Data=printData.filter(function(elem){
-                    return elem.brand==e.target.brand;
+            filt_Data=printData.filter(function(elem){
+                    return elem.brand==e.target.value;
                 });
-                displayProduct(filt_Data);
-                console.log(filt_Data)
+                if(filt_Data.length==0){
+                    alert("Sorry, no products matched your selection");
+                    displayProduct(printData);
+                }else{
+                    document.querySelector("#brandTotalProduct").textContent="Brand" +  " " + "   [ Quantity-" +filt_Data.length +" ]";
+                displayProduct(filt_Data);  
+                console.log(filt_Data,filt_Data.length)
+                document.querySelector("#displayheading").textContent= e.target.value;
+
+                }
+            
+
             })
         });
 
+         /*            Category                     */
+     
+ var filtcatg=document.querySelectorAll(".catgfilter");
+    filtcatg.forEach(element => {
+            element.addEventListener("change",function(e){
+                e.target.value;
+                console.log(e.target.value);
+                filt_Data=printData.filter(function(elem){
+                    return elem.catg==e.target.value;
+                });
+                if(filt_Data.length==0){
+                    alert("Sorry, no products matched your selection");
+                    displayProduct(printData);
+                }else{
+                displayProduct(filt_Data);
+                // console.log(filt_Data,filt_Data.length)
+                document.querySelector("#catgTotalProduct").textContent="Skincare Cetegory" +  " " + "   [ Quantity-" +filt_Data.length +" ]";
+                document.querySelector("#displayheading").textContent= e.target.value;    
+            }
+            })
+        });
+
+   /*            Price                    */
+
+     
+   var filtPrice=document.querySelectorAll(".pricefilter");
+    filtPrice.forEach(element => {
+            element.addEventListener("change",function(e){
+                e.target.value;
+                console.log(e.target.value);
+                filt_Data=printData.filter(function(elem){
+                 
+                    if(e.target.value==="1"){
+                        return elem.finalPrice <= 1000;
+                    } 
+                    if(e.target.value==="2"){
+                        return elem.finalPrice > 1000 &&  elem.finalPrice < 3001 ;
+                    } 
+                    if(e.target.value==="3"){
+                        return elem.finalPrice > 3000 &&  elem.finalPrice < 5001 ;
+                    } 
+                    if(e.target.value==="4"){
+                        return elem.finalPrice > 5000 &&  elem.finalPrice < 10001 ;
+                    } 
+                    if(e.target.value==="5"){
+                        return elem.finalPrice > 10000   ;
+                    } 
+                    
+                });
+                if(filt_Data.length==0){
+                    alert("Sorry, no products matched your selection");
+                    displayProduct(printData);
+                }else{
+                displayProduct(filt_Data);
+                document.querySelector("#priceTotalProduct").textContent="Price" +  " " + "   [ Quantity-" +filt_Data.length +" ]";
+                document.querySelector("#displayheading").textContent= "View All Skincare";
+                }
+            });
+        });
+
+/*                    discount sort                         */
+
+var filtdiscount=document.querySelectorAll(".discfilter");
+filtdiscount.forEach(element => {
+            element.addEventListener("change",function(e){
+                e.target.value;
+                console.log(e.target.value);
+                filt_Data=printData.filter(function(elem){
+                 
+                    if(e.target.value==="1"){
+                        return elem.discount< 10 ;
+                    } 
+                    if(e.target.value==="2"){
+                        return elem.discount > 9 &&  elem.finalPrice < 21 ;
+                    } 
+                    if(e.target.value==="3"){
+                        return elem.discount > 21 &&  elem.finalPrice < 31 ;
+                    } 
+                    if(e.target.value==="4"){
+                        return elem.discount > 30 &&  elem.finalPrice < 51 ;
+                    } 
+                    if(e.target.value==="5"){
+                        return elem.discount > 50   ;
+                    } 
+                    
+                });
+                if(filt_Data.length==0){
+                    alert("Sorry, no products matched your selection");
+                    displayProduct(printData);
+                }else{
+                displayProduct(filt_Data);
+                document.querySelector("#discTotalProduct").textContent="Price" +  " " + "   [ Quantity-" +filt_Data.length +" ]";
+                document.querySelector("#displayheading").textContent= "View All Skincare";    
+            }
+
+            });
+        });
+
+
+
+//  function filt_brand(printData){
+//             var brandval=document.querySelector(".brandfilter").value;
+//             var filered_Brand=arr.filter(function(elem){
+//                 // if(brandval===elem.brand){
+//                     return brandval===elem.brand; 
+//                 // } else{
+//                 //     return elem.brand===brandval;
+//                 // }
+                
+//             });
+//             displayProduct(filered_Brand);
+//  }
+
+
     
+        var pageNum=Math.ceil(printData.length/12);
+          console.log(printData.length / 12);   // 60/12 5  61 6
+        display_Num();
+    function display_Num() {
+        document.querySelector("#pagenum").innerHTML="";
+            for(var i=1; i<= pageNum; i++){
+                var page=document.createElement("input");
+                page.readOnly=true
+                page.value=i;
+                page.style.backgroundColor="white";
+                page.setAttribute("class", "getPage");
+                page.addEventListener("click",function(e){
+                    display_Page(printData,+e.target.value);
 
-    //       var prodnumstart=1;
-    //     display_Page(printData);
-    // function displayProduct(arr) {
-    //     document.querySelector("#pagenum").innerHTML="";
-    //         for(var i=product.length; i%12<=12;)
+               
+                   
+                        // console.log(i,+page.innerText,indexval,"dabds");
+                });
+                document.querySelector("#pagenum").append(page);
+            }
           
-    //         document.querySelector("#pagenum").append();
           
-       
-    // }
-
+          function display_Page(arr,n){    
+            var startPoint=(n-1)*12;
+            var endPoint=n*12; 
+            console.log(startPoint,endPoint);           1
+          var newArr=  arr.filter(function(elem,i){
+                if(i>=startPoint && i<endPoint){
+                    return elem;
+                };
+                
+                
+            })
+            displayProduct(newArr);
+            console.log(newArr);
+        
+          }
+       display_Page(printData,1);
+    }
 
 </script>
 <script src="productarray.js"></script>
