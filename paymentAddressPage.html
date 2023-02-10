@@ -45,10 +45,12 @@
             width: 65%;
             background-color: white;
         }
-        .login> div> div:first-child{
+
+        .login>div>div:first-child {
             width: 80%;
         }
-        .login> div> div:last-child{
+
+        .login>div>div:last-child {
             width: 20%;
         }
 
@@ -252,12 +254,13 @@
             background-color: teal;
             border: 0;
         }
-        #secureCode input{
+
+        #secureCode input {
             width: 48%;
             height: 37px;
             margin-right: -40px;
         }
-       
+
 
         /* #make_payment>img{
 width: 20px;
@@ -270,8 +273,6 @@ margin-left: 10px;
             font-size: 20px;
             font-weight: 300;
             justify-content: center
-            
-
         }
 
         #termsCondi {
@@ -281,7 +282,7 @@ margin-left: 10px;
             padding: 5px 30px;
         }
 
-        
+
 
 
 
@@ -319,36 +320,41 @@ margin-left: 10px;
     border-top: 4px solid black;
     position: relative;  */
         }
-        
-        #payment_footer{
-    border-top: 1px solid gray;
-    margin: auto;
-    margin-top: 30px;
-    margin-bottom: 30px;
-    width: 48%;
-}
-#payment_footer>p{
-    font-weight: 300;
-    font-size: 13px;
-    margin-bottom: -10px;
-}
-#expiryDate_card> select{
-    width: 49%;
-    height: 42px;
-    margin: 0.3%;
-    border-radius: 4px;
-    border-width: 1px;  
-}
-#questionmark{
-    width: 20px;
-    height: 20px;
-   
-}
-input{
-    border-radius: 4px;
-    border-width: 1px;    
-}
- #make_payment span {
+
+        #payment_footer {
+            border-top: 1px solid gray;
+            margin: auto;
+            margin-top: 30px;
+            margin-bottom: 30px;
+            width: 48%;
+        }
+
+        #payment_footer>p {
+            font-weight: 300;
+            font-size: 13px;
+            margin-bottom: -10px;
+        }
+
+        #expiryDate_card>select {
+            width: 49%;
+            height: 42px;
+            margin: 0.3%;
+            border-radius: 4px;
+            border-width: 1px;
+        }
+
+        #questionmark {
+            width: 20px;
+            height: 20px;
+
+        }
+
+        input {
+            border-radius: 4px;
+            border-width: 1px;
+        }
+
+        #make_payment span {
             font-family: lato, Arial, Helvetica, sans-serif;
             font-size: 18px;
             line-height: 32.4px;
@@ -356,17 +362,17 @@ input{
             font-weight: 300;
             font-style: normal;
             padding-left: 10px;
-            
+
 
         }
-        #make_payment p{
+
+        #make_payment p {
             text-align: right;
         }
-        .fa-solid{
+
+        .fa-solid {
             padding-top: 5px;
         }
-
-
     </style>
 </head>
 
@@ -414,7 +420,7 @@ input{
             <div class="delivery_option"></div>
             <div id="deliveryOption_form">
                 <h3>2. Select Delivery Option</h3>
-                <div>
+                <div id="displayDeliveryOptions">
                     <h5>Tracked Delivery</h5>
                     <p>Delivered within 3-5 working days</p>
                     <h4>FREE</h4>
@@ -490,11 +496,11 @@ input{
                     </div>
                     <div id="secureCode">
                         <p>* Security Code (CV2)</p>
-                    <input type="number" id="security_code">
-                    <img src="https://s1.thcdn.com/checkout/resources/images/cb1b4c1a48689997807d6ba0112b5d47.svg"
-                        alt="questionMark" id="questionmark">
+                        <input type="number" id="security_code">
+                        <img src="https://s1.thcdn.com/checkout/resources/images/cb1b4c1a48689997807d6ba0112b5d47.svg"
+                            alt="questionMark" id="questionmark">
                     </div>
-                    
+
                     <div>
                         <p>Use my shipping address as my cardholder address</p>
                     </div>
@@ -522,7 +528,7 @@ input{
             <div class="delivery_option"></div>
             <div id="submitButton_payment">
                 <button id="make_payment">
-                    <p><i class="fa-solid fa-lock"></i>    <span> SUBMIT MY ORDER</span></p>
+                    <p><i class="fa-solid fa-lock"></i> <span> SUBMIT MY ORDER</span></p>
                 </button>
             </div>
             <div id="termsCondi">
@@ -535,68 +541,57 @@ input{
             <p>1209 Orange Street, Wilmington, New Castle, DE 19801. United States</p>
         </div>
     </div>
-   
+
 </body>
 
 </html>
 <script>
-    var shippingForm = document.getElementById("form1");
-var paymentForm = document.getElementById("form2");
 
-//Shipping Form Details
-var emailAddress = document.getElementById("email");
-var countryName = document.getElementById("countryName");
-var fullName = document.getElementById("fullname");
-var address = document.getElementById("adress");
-var apartment = document.getElementById("apartment");
-var town = document.getElementById("town");
-var state = document.getElementById("state");
-var zipCode = document.getElementById("zipcode");
-var contactNum = document.getElementById("contactNumber");
-
-//Payment Details
-var cardNum = document.getElementById("cardNumber");
-var cardOwner = document.getElementById("nameOnCard");
-var cardExpMonth = document.getElementById("expiryMonth_card")
-var cardExpYear = document.getElementById("expiry-year");
-var cvv = document.getElementById("security_code");
-
-//var deliveryOptions = document.querySelector("#deliveryOption_form>div");
-
-
-
-
-
-var submitBtn = document.querySelectorAll("form").addEventListener("submit", submitForm());
-// var addressArr = JSON.parse(localStorage.getItem("shippingAddress")) || [];
-// var paymentArr = JSON.parse(localStorage.getItem("cardDetails")) || [];
-function submitForm(){
-    //event.preventDefault();
-
-        var addressArrObj = {
-            emailAddress: emailAddress.value,
-            countryName:countryName.value,
-            fullName:fullName.value,
-            address:address.value,
-            apartment:apartment.value,
-            town:town.value,
-            state:state.value,
-            zipCode:zipCode.value,
-            contactNum:contactNum.value
+var delAdd= document.querySelector("#deliveryOption_form>div");
+var cellNumber = document.getElementById("contactNumber")
+cellNumber.addEventListener("keyup",()=>{
+        var emailAddress = document.getElementById("email").value.length;
+        var countryName = document.getElementById("countryName").value.length;
+        var fullName = document.getElementById("fullname").value.length;
+        var address = document.getElementById("address").value.length;
+        var apartment = document.getElementById("apartment").value.length;
+        var town = document.getElementById("town").value.length;
+        var state = document.getElementById("state").value.length;
+        var zipCode = document.getElementById("zipcode").value.length;
+        var contactNum = document.getElementById("contactNumber").value.length;
+        if(emailAddress===0 || countryName===0 || fullName===0 || address===0 || apartment===0 || town===0 || state===0 || zipCode===0 || contactNum===0){
+            alert("Fill all the previous details to proceed");
+        }else{
+            document.querySelector("#deliveryOption_form>div").style.display='block';
         }
-        // addressArr.push(addressArrObj);
-        localStorage.setItem("shippingAddress",JSON.stringify(shippingAddressObj))
+});
 
-        var paymentArrObj = {
-            cardNum:cardNum.value,
-            cardOwner:cardOwner.value,
-            cardExpMonth:cardExpMonth.value,
-            cardExpYear:cardExpYear.value,
-            cvv:cvv.value
+    var subButtn = document.getElementById("make_payment").addEventListener("click", function () {
+        uponSubmit();
+    });
+
+    function uponSubmit() {
+        var emailAddress = document.getElementById("email").value.length;
+        var countryName = document.getElementById("countryName").value.length;
+        var fullName = document.getElementById("fullname").value.length;
+        var address = document.getElementById("address").value.length;
+        var apartment = document.getElementById("apartment").value.length;
+        var town = document.getElementById("town").value.length;
+        var state = document.getElementById("state").value.length;
+        var zipCode = document.getElementById("zipcode").value.length;
+        var contactNum = document.getElementById("contactNumber").value.length;
+
+        //Payment Details
+        var cardNum = document.getElementById("cardNumber").value.length;
+        var cardOwner = document.getElementById("nameOnCard").value.length;
+        var cardExpMonth = document.getElementById("expiryMonth_card").value.length;
+        var cardExpYear = document.getElementById("expiry-year").value.length;
+        var cvv = document.getElementById("security_code").value.length;
+
+        if(emailAddress===0 || countryName===0 || fullName===0 || address===0 || apartment===0 || town===0 || state===0 || zipCode===0 || contactNum===0 || cardNum===0 || cardOwner===0 || cardExpMonth===0 || cvv===0){
+            alert("Fill all the details to proceed");   
+        }else{
+            // have to add link here
+            console.log("form submitted");
         }
-        // paymentArr.push(paymentArrObj)
-        localStorage.setItem("cardDetails",JSON.stringify(cardDetailsObj))
-
-};
-
-</script>
+    };
