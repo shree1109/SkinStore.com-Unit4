@@ -1,14 +1,13 @@
+var arrProduct = JSON.parse(localStorage.getItem("storeData")) || [];
 
-var arrProduct=JSON.parse(localStorage.getItem("storeData")) || [];
-
-var products_Data=[
-    {
+var products_Data = [{
         "Id": "1",
         "img": "https://static.thcdn.com/images/large/webp//productimg/1600/1600/12588490-1104871815960929.jpg",
         "img2": "https://static.thcdn.com/images/large/webp//productimg/1600/1600/12588490-1744871815998498.jpg",
         "catg": "skinCare",
         "brand": "111SKIN ",
         "description": "Celestial Black Diamond Serum 1.01 oz",
+        "Qty": 1,
         "MRP": 600,
         "discount": 0,
         "finalPrice": 600
@@ -20,6 +19,7 @@ var products_Data=[
         "catg": "skinCare",
         "brand": "3LAB",
         "description": "Perfect BB SPF 40 1.5 oz.",
+        "Qty": 1,
         "MRP": 150,
         "discount": 0,
         "finalPrice": 150
@@ -31,6 +31,7 @@ var products_Data=[
         "catg": "skinCare",
         "brand": "111SKIN ",
         "description": "Hyaluronic Acid Aqua Booster 20ml",
+        "Qty": 1,
         "MRP": 250,
         "discount": 10,
         "finalPrice": 225
@@ -42,6 +43,7 @@ var products_Data=[
         "catg": "skinCare",
         "brand": "111SKIN ",
         "description": "Celestial Black Diamond Lifting and Firming Treatment Mask Box 155 ml",
+        "Qty": 1,
         "MRP": 250,
         "discount": 10,
         "finalPrice": 225
@@ -53,6 +55,7 @@ var products_Data=[
         "catg": "skinCare",
         "brand": "3LAB",
         "description": "WW Day SPF40 Moisturiser 50ml",
+        "Qty": 1,
         "MRP": 500,
         "discount": 5,
         "finalPrice": 475
@@ -64,6 +67,7 @@ var products_Data=[
         "catg": "skinCare",
         "brand": "111SKIN ",
         "description": "Vitamin C Brightening Booster 0.68 oz",
+        "Qty": 1,
         "MRP": 1155,
         "discount": 7,
         "finalPrice": 1074
@@ -75,6 +79,7 @@ var products_Data=[
         "catg": "skinCare",
         "brand": "3LAB",
         "description": "Anti-Ageing Cream 60ml",
+        "Qty": 1,
         "MRP": 7500,
         "discount": 15,
         "finalPrice": 6375
@@ -86,6 +91,7 @@ var products_Data=[
         "catg": "skinCare",
         "brand": "3LAB",
         "description": "Perfect Balancing Toner",
+        "Qty": 1,
         "MRP": 1000,
         "discount": 25,
         "finalPrice": 750
@@ -97,6 +103,7 @@ var products_Data=[
         "catg": "skinCare",
         "brand": "111SKIN ",
         "description": "Oxygen Express Mask 75ml",
+        "Qty": 1,
         "MRP": 1135,
         "discount": 10,
         "finalPrice": 1022
@@ -108,6 +115,7 @@ var products_Data=[
         "catg": "skinCare",
         "brand": "111SKIN ",
         "description": "Theorem Day Cream NAC Y2 1.69 oz",
+        "Qty": 1,
         "MRP": 2700,
         "discount": 5,
         "finalPrice": 2565
@@ -119,6 +127,7 @@ var products_Data=[
         "catg": "skinCare",
         "brand": "3LAB",
         "description": "Super Cream 50ml",
+        "Qty": 1,
         "MRP": 1950,
         "discount": 11,
         "finalPrice": 1736
@@ -130,6 +139,7 @@ var products_Data=[
         "catg": "skinCare",
         "brand": "3LAB",
         "description": "Perfect Scrub 100ml",
+        "Qty": 1,
         "MRP": 800,
         "discount": 20,
         "finalPrice": 640
@@ -141,6 +151,7 @@ var products_Data=[
         "catg": "hair",
         "brand": "Act+Acre",
         "description": "Cold Processed Cleanse Shampoo (Various Sizes)",
+        "Qty": 1,
         "MRP": 3200,
         "discount": 20,
         "finalPrice": 2560
@@ -152,6 +163,7 @@ var products_Data=[
         "catg": "hair",
         "brand": "AHAVA",
         "description": "AHAVA Mineral Conditioner 400ml New",
+        "Qty": 1,
         "MRP": 320,
         "discount": 0,
         "finalPrice": 320
@@ -163,6 +175,7 @@ var products_Data=[
         "catg": "hair",
         "brand": "Aesop",
         "description": "Conditioner 100ml",
+        "Qty": 1,
         "MRP": 1190,
         "discount": 10,
         "finalPrice": 1071
@@ -174,6 +187,7 @@ var products_Data=[
         "catg": "hair",
         "brand": "Aesop",
         "description": "Rose Hair and Scalp Moisturising Masque 500ml",
+        "Qty": 1,
         "MRP": 1100,
         "discount": 10,
         "finalPrice": 990
@@ -185,6 +199,7 @@ var products_Data=[
         "catg": "hair",
         "brand": "Aesop",
         "description": "Organic Bamboo Comb",
+        "Qty": 1,
         "MRP": 200,
         "discount": 15,
         "finalPrice": 170
@@ -196,6 +211,7 @@ var products_Data=[
         "catg": "hair",
         "brand": "Act+Acre ",
         "description": "Vegan Capsules (180 Capsules)",
+        "Qty": 1,
         "MRP": 520,
         "discount": 5,
         "finalPrice": 494
@@ -207,6 +223,7 @@ var products_Data=[
         "catg": "hair",
         "brand": "Act+Acre",
         "description": "Plant Based Dry Shampoo 0.60 fl oz",
+        "Qty": 1,
         "MRP": 2500,
         "discount": 25,
         "finalPrice": 1875
@@ -218,6 +235,7 @@ var products_Data=[
         "catg": "hair",
         "brand": "Act+Acre",
         "description": "Hair Cleanse Jumbo Shampoo 1000ml",
+        "Qty": 1,
         "MRP": 760,
         "discount": 20,
         "finalPrice": 608
@@ -229,6 +247,7 @@ var products_Data=[
         "catg": "hair",
         "brand": "Aesop",
         "description": "Rose Hair & Scalp Moisturising Masque 120ml",
+        "Qty": 1,
         "MRP": 3500,
         "discount": 20,
         "finalPrice": 2800
@@ -240,6 +259,7 @@ var products_Data=[
         "catg": "hair",
         "brand": "Aesop",
         "description": "Conditioner 500ml",
+        "Qty": 1,
         "MRP": 500,
         "discount": 5,
         "finalPrice": 475
@@ -251,6 +271,7 @@ var products_Data=[
         "catg": "hair",
         "brand": "Aesop",
         "description": "Tame Hair Serum 60ml",
+        "Qty": 1,
         "MRP": 3500,
         "discount": 25,
         "finalPrice": 2625
@@ -262,6 +283,7 @@ var products_Data=[
         "catg": "hair",
         "brand": "Aesop",
         "description": "Sage & Cedar Scalp Treatment 25ml",
+        "Qty": 1,
         "MRP": 3500,
         "discount": 30,
         "finalPrice": 2450
@@ -273,6 +295,7 @@ var products_Data=[
         "catg": "makeUp",
         "brand": "By Terry",
         "description": "My Mini Essentials Set",
+        "Qty": 1,
         "MRP": 2600,
         "discount": 10,
         "finalPrice": 2340
@@ -284,6 +307,7 @@ var products_Data=[
         "catg": "makeUp",
         "brand": "By Terry",
         "description": "By Terry Hyaluronic Hydra-Primer - Travel Size ",
+        "Qty": 1,
         "MRP": 2000,
         "discount": 50,
         "finalPrice": 1000
@@ -295,6 +319,7 @@ var products_Data=[
         "catg": "makeUp",
         "brand": "By Terry",
         "description": "erryfic Glow Stunning Eyes Cracker",
+        "Qty": 1,
         "MRP": 4400,
         "discount": 20,
         "finalPrice": 3520
@@ -306,6 +331,7 @@ var products_Data=[
         "catg": "makeUp",
         "brand": "Chantecaille",
         "description": "Makeup Foundation (Various Shades)",
+        "Qty": 1,
         "MRP": 8000,
         "discount": 40,
         "finalPrice": 4800
@@ -317,6 +343,7 @@ var products_Data=[
         "catg": "makeUp",
         "brand": "Chantecaille",
         "description": "Faux Cils Mascara",
+        "Qty": 1,
         "MRP": 5400,
         "discount": 40,
         "finalPrice": 3240
@@ -328,6 +355,7 @@ var products_Data=[
         "catg": "makeUp",
         "brand": "By Terry",
         "description": "Terryfic Glow Beauty Favorites Gift Box",
+        "Qty": 1,
         "MRP": 3900,
         "discount": 15,
         "finalPrice": 3315
@@ -339,6 +367,7 @@ var products_Data=[
         "catg": "makeUp",
         "brand": "Chantecaille",
         "description": "Future Skin Oil-Free Foundation 30g",
+        "Qty": 1,
         "MRP": 2890,
         "discount": 30,
         "finalPrice": 2023
@@ -350,6 +379,7 @@ var products_Data=[
         "catg": "makeUp",
         "brand": "By Terry",
         "description": "Blush Brush - Angled 3",
+        "Qty": 1,
         "MRP": 850,
         "discount": 60,
         "finalPrice": 340
@@ -361,6 +391,7 @@ var products_Data=[
         "catg": "makeUp",
         "brand": "By Terry",
         "description": "LIP-EXPERT SHINE Liquid Lipstick (Various Shades)",
+        "Qty": 1,
         "MRP": 3400,
         "discount": 40,
         "finalPrice": 2040
@@ -372,6 +403,7 @@ var products_Data=[
         "catg": "makeUp",
         "brand": "Chantecaille",
         "description": "Brow Eclat Highlighter",
+        "Qty": 1,
         "MRP": 2700,
         "discount": 20,
         "finalPrice": 2160
@@ -383,6 +415,7 @@ var products_Data=[
         "catg": "makeUp",
         "brand": "Chantecaille",
         "description": "Lip Chic - Capucine 2.5g",
+        "Qty": 1,
         "MRP": 4800,
         "discount": 5,
         "finalPrice": 4560
@@ -394,6 +427,7 @@ var products_Data=[
         "catg": "makeUp",
         "brand": "Chantecaille",
         "description": "Buff and Blur Brush",
+        "Qty": 1,
         "MRP": 560,
         "discount": 5,
         "finalPrice": 532
@@ -405,6 +439,7 @@ var products_Data=[
         "catg": "bath&Body",
         "brand": "Colorescience",
         "description": "Total Eye 3-in-1 SPF35 Renewal Therapy 0.23 oz (Various Shades)",
+        "Qty": 1,
         "MRP": 2790,
         "discount": 15,
         "finalPrice": 2372
@@ -416,6 +451,7 @@ var products_Data=[
         "catg": "bath&Body",
         "brand": "Daily Concepts",
         "description": "Detox Brush 5.9g",
+        "Qty": 1,
         "MRP": 1800,
         "discount": 50,
         "finalPrice": 900
@@ -427,6 +463,7 @@ var products_Data=[
         "catg": "bath&Body",
         "brand": "Daily Concepts",
         "description": "Exfoliating Dual Texture Scrubber 3g",
+        "Qty": 1,
         "MRP": 1200,
         "discount": 20,
         "finalPrice": 960
@@ -438,6 +475,7 @@ var products_Data=[
         "catg": "bath&Body",
         "brand": "Cowshed",
         "description": "Restore Hand Gel 250ml",
+        "Qty": 1,
         "MRP": 2800,
         "discount": 30,
         "finalPrice": 1960
@@ -449,6 +487,7 @@ var products_Data=[
         "catg": "bath&Body",
         "brand": "Cowshed",
         "description": "AWAKE Bracing Body Lotion 300ml",
+        "Qty": 1,
         "MRP": 3200,
         "discount": 10,
         "finalPrice": 2880
@@ -460,6 +499,7 @@ var products_Data=[
         "catg": "bath&Body",
         "brand": "Daily Concepts",
         "description": "Multifunctional Charcoal Soap Sponge 45 oz",
+        "Qty": 1,
         "MRP": 800,
         "discount": 30,
         "finalPrice": 560
@@ -471,6 +511,7 @@ var products_Data=[
         "catg": "bath&Body",
         "brand": "Confessions of a Rebel",
         "description": "F*ck Mondays Natural Deodorant 71g",
+        "Qty": 1,
         "MRP": 2500,
         "discount": 25,
         "finalPrice": 1875
@@ -482,6 +523,7 @@ var products_Data=[
         "catg": "bath&Body",
         "brand": "Cowshed",
         "description": "Awake Bracing Bath Salts",
+        "Qty": 1,
         "MRP": 3000,
         "discount": 25,
         "finalPrice": 2250
@@ -493,6 +535,7 @@ var products_Data=[
         "catg": "bath&Body",
         "brand": "Colorescience",
         "description": "Sunforgettable Total Protection Brush-On Shield SPF 50 6 g.",
+        "Qty": 1,
         "MRP": 6900,
         "discount": 40,
         "finalPrice": 4140
@@ -504,6 +547,7 @@ var products_Data=[
         "catg": "bath&Body",
         "brand": "Colorescience",
         "description": "Sunforgettable Total Protection Sport Stick SPF50",
+        "Qty": 1,
         "MRP": 3400,
         "discount": 16,
         "finalPrice": 2856
@@ -515,6 +559,7 @@ var products_Data=[
         "catg": "bath&Body",
         "brand": "Colorescience",
         "description": "Sunforgettable Total Protection Body Shield Bronze SPF50 (Pa ++++)",
+        "Qty": 1,
         "MRP": 4600,
         "discount": 15,
         "finalPrice": 3910
@@ -526,6 +571,7 @@ var products_Data=[
         "catg": "bath&Body",
         "brand": "Cowshed",
         "description": "INDULGE Blissful Treats",
+        "Qty": 1,
         "MRP": 2500,
         "discount": 28,
         "finalPrice": 1800
@@ -537,6 +583,7 @@ var products_Data=[
         "catg": "fragrance",
         "brand": "Ellis Brooklyn",
         "description": "SWEET Eau de Parfum 10ml",
+        "Qty": 1,
         "MRP": 1500,
         "discount": 10,
         "finalPrice": 1350
@@ -548,6 +595,7 @@ var products_Data=[
         "catg": "fragrance",
         "brand": "Ellis Brooklyn",
         "description": "Après Eau de Parfum 50ml",
+        "Qty": 1,
         "MRP": 2000,
         "discount": 20,
         "finalPrice": 1600
@@ -559,6 +607,7 @@ var products_Data=[
         "catg": "fragrance",
         "brand": "Estée Lauder",
         "description": "Beautiful Magnolia Eau de Parfum - 50ml",
+        "Qty": 1,
         "MRP": 3999,
         "discount": 23,
         "finalPrice": 3079
@@ -570,6 +619,7 @@ var products_Data=[
         "catg": "fragrance",
         "brand": "Ellis Brooklyn",
         "description": "Raven Terrific Scented Candle 6.5 oz",
+        "Qty": 1,
         "MRP": 1650,
         "discount": 15,
         "finalPrice": 1403
@@ -581,6 +631,7 @@ var products_Data=[
         "catg": "fragrance",
         "brand": "Ellis Brooklyn ",
         "description": "SWEET Eau de Parfum 50ml",
+        "Qty": 1,
         "MRP": 5800,
         "discount": 30,
         "finalPrice": 4060
@@ -592,6 +643,7 @@ var products_Data=[
         "catg": "fragrance",
         "brand": "Ellis Brooklyn",
         "description": "Pseudonym Terrific Scented Candle 6.5 oz",
+        "Qty": 1,
         "MRP": 650,
         "discount": 10,
         "finalPrice": 585
@@ -603,6 +655,7 @@ var products_Data=[
         "catg": "fragrance",
         "brand": "Estée Lauder",
         "description": "Beautiful Magnolia Intense Eau de Parfum 100ml",
+        "Qty": 1,
         "MRP": 3500,
         "discount": 5,
         "finalPrice": 3325
@@ -614,6 +667,7 @@ var products_Data=[
         "catg": "fragrance",
         "brand": "Ellis Brooklyn",
         "description": "FAWN Eau de Parfum 10ml",
+        "Qty": 1,
         "MRP": 320,
         "discount": 5,
         "finalPrice": 304
@@ -625,6 +679,7 @@ var products_Data=[
         "catg": "fragrance",
         "brand": "ESPA",
         "description": "Energising Bath Oil 100ml",
+        "Qty": 1,
         "MRP": 530,
         "discount": 5,
         "finalPrice": 504
@@ -636,6 +691,7 @@ var products_Data=[
         "catg": "fragrance",
         "brand": "ESPA",
         "description": "Positivity Aromatherapy Single Oil 10ml",
+        "Qty": 1,
         "MRP": 420,
         "discount": 5,
         "finalPrice": 399
@@ -647,6 +703,7 @@ var products_Data=[
         "catg": "fragrance",
         "brand": "ESPA",
         "description": "Positivity Diffuser 200ml",
+        "Qty": 1,
         "MRP": 1020,
         "discount": 10,
         "finalPrice": 918
@@ -658,12 +715,12 @@ var products_Data=[
         "catg": "fragrance",
         "brand": "ESPA",
         "description": "Soothing Diffuser 200ml",
+        "Qty": 1,
         "MRP": 1020,
         "discount": 10,
         "finalPrice": 918
     }
-];  
+];
 
-    arrProduct=[...products_Data];
-localStorage.setItem("storeData",JSON.stringify(arrProduct));
-    
+arrProduct = [...products_Data];
+localStorage.setItem("storeData", JSON.stringify(arrProduct));
