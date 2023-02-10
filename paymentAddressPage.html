@@ -373,10 +373,13 @@ margin-left: 10px;
         .fa-solid {
             padding-top: 5px;
         }
+
+        
     </style>
 </head>
 
 <body>
+
 
     <div id="main_container">
         <div class="login">
@@ -547,9 +550,9 @@ margin-left: 10px;
 </html>
 <script>
 
-var delAdd= document.querySelector("#deliveryOption_form>div");
-var cellNumber = document.getElementById("contactNumber")
-cellNumber.addEventListener("keyup",()=>{
+    var delAdd = document.querySelector("#deliveryOption_form>div");
+    var cellNumber = document.getElementById("contactNumber")
+    cellNumber.addEventListener("keyup", () => {
         var emailAddress = document.getElementById("email").value.length;
         var countryName = document.getElementById("countryName").value.length;
         var fullName = document.getElementById("fullname").value.length;
@@ -559,12 +562,13 @@ cellNumber.addEventListener("keyup",()=>{
         var state = document.getElementById("state").value.length;
         var zipCode = document.getElementById("zipcode").value.length;
         var contactNum = document.getElementById("contactNumber").value.length;
-        if(emailAddress===0 || countryName===0 || fullName===0 || address===0 || apartment===0 || town===0 || state===0 || zipCode===0 || contactNum===0){
+        if (emailAddress === 0 || countryName === 0 || fullName === 0 || address === 0 || apartment === 0 ||
+            town === 0 || state === 0 || zipCode === 0 || contactNum === 0) {
             alert("Fill all the previous details to proceed");
-        }else{
-            document.querySelector("#deliveryOption_form>div").style.display='block';
+        } else {
+            document.querySelector("#deliveryOption_form>div").style.display = 'block';
         }
-});
+    });
 
     var subButtn = document.getElementById("make_payment").addEventListener("click", function () {
         uponSubmit();
@@ -588,11 +592,13 @@ cellNumber.addEventListener("keyup",()=>{
         var cardExpYear = document.getElementById("expiry-year").value.length;
         var cvv = document.getElementById("security_code").value.length;
 
-        if(emailAddress===0 || countryName===0 || fullName===0 || address===0 || apartment===0 || town===0 || state===0 || zipCode===0 || contactNum===0 || cardNum===0 || cardOwner===0 || cardExpMonth===0 || cvv===0){
-            alert("Fill all the details to proceed");   
-        }else{
+        if (emailAddress === 0 || countryName === 0 || fullName === 0 || address === 0 || apartment === 0 || town ===
+            0 || state === 0 || zipCode === 0 || contactNum === 0 || cardNum === 0 || cardOwner === 0 ||
+            cardExpMonth === 0 || cvv === 0) {
+            alert("Fill all the details to proceed");
+        } else {
             // have to add link here
-            console.log("form submitted");
+            location.href = 'pop.html';
         }
     };
-    </script>
+</script>
