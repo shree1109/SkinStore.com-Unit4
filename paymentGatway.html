@@ -7,7 +7,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Checkout</title>
     <script src="https://kit.fontawesome.com/3e0c0ed060.js" crossorigin="anonymous"></script>
-    <script src="https://kit.fontawesome.com/3e0c0ed060.js" crossorigin="anonymous"></script>
     <style>
         body {
             background-color: rgb(240, 242, 245);
@@ -16,6 +15,9 @@
         .mainContainer {
             width: 60%;
             margin: auto;
+        }
+        .display{
+            display: none;
         }
 
         .card-details div img {
@@ -362,10 +364,76 @@
             color: rgba(51, 51, 51);
             line-height: 24px;
         }
-        /* header {
-            background-color: rgb(255, 255, 255);
-            margin: -20px;
-        } */
+
+
+        /* PopUpBox Css */
+
+
+        .container{
+            position: fixed;
+            width: 20%;
+            height: 250px;
+            margin: 5% 0% 0% 35%;
+            background: rgb(206, 185, 185);
+            padding: 30px 65px;
+            border-radius: 8px;
+            opacity: 0;
+            pointer-events: none;
+        }
+        .active{
+            opacity: 1;
+            pointer-events: fill;
+        }
+
+        .conHeading {
+            font-size: 1.25rem;
+            color: #333;
+            font-weight: 500;
+            text-align: center;
+        }
+        .input-field{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 30px;
+        }
+        .input-field input {
+            height: 43px;
+            width: 40px;
+            border-radius: 6px;
+            outline: none;
+            font-size: 1.125rem;
+            text-align: center;
+            border: 1px solid #ddd;
+            margin: 2px;
+            
+        }
+        form a {
+            font-family: lato,Arial, Helvetica, sans-serif;
+            margin-left: 55px;
+           text-decoration: none;
+            color: #fff;
+            font-size: 1rem;
+            border: none;
+            padding: 14px 20px;
+            cursor: pointer;
+            border-radius: 6px;
+            background: #5c5e63;
+        }
+        form a:hover {
+            background: #d6ddf1;
+            color: #333;
+            cursor: pointer;
+        }
+        header img{
+            width: 20%;
+            display: flex;
+            margin: auto;
+        }
+        .input-field input::-webkit-inner-spin-button,
+        .input-field input::-webkit-outer-spin-button {
+            display: none;
+        }
     </style>
 </head>
 
@@ -376,6 +444,22 @@
             <p>Part of the LOOKFANTASTIC group</p>
         </div>
     </header> -->
+    <div class="container">
+        <header>
+            <img src="protection.png" alt="shield check">
+        </header>
+        <h4 class="conHeading">Enter OTP Code</h4>
+        <form>
+            <div class="input-field">
+                <input type="number" maxlength="1">
+                <input type="number" maxlength="1">
+                <input type="number" maxlength="1">
+                <input type="number" maxlength="1">
+            </div>
+            <a href="thankyouPage.html">Verify OTP</a> 
+        </form>
+         
+    </div>
     <div class="mainContainer">
         <div class="login">
             <div>
@@ -383,7 +467,8 @@
                     <h2>Login or sign up</h2>
                     <p>Checkout faster with saved details and get access to exclusive offers</p>
                 </div>
-                <button>LOGIN/SIGNUP</button>
+                <a href="login.html"><button>LOGIN/SIGNUP</button></a>
+                
             </div>
         </div>
         <div class="checkout">
@@ -519,7 +604,7 @@
                 </div>
             </div>
         </div>
-        <div class="button">
+        <div class="button" id="trigger">
             <button>
                 <i class="fa-solid fa-lock"></i>
                 <span>SUBMIT MY ORDER</span>
@@ -531,5 +616,17 @@
         </p>
     </div>
 </body>
+
+<script>
+    var trigger = document.querySelector("#trigger");
+    var container = document.querySelector(".container");
+    var mainCon = document.querySelector(".mainContainer");
+    trigger.addEventListener("click",function(){
+        container.classList.add("active");
+        mainCon.classList.add("display");
+    });
+
+   
+</script>
 
 </html>
