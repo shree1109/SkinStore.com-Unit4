@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>pop</title>
+    <style>
+         .container{
+            position: fixed;
+            width: 20%;
+            height: 250px;
+            margin: 5% 0% 0% 35%;
+            background: rgb(206, 185, 185);
+            padding: 30px 65px;
+            border-radius: 8px;
+            /* opacity: 0;
+            pointer-events: none; */
+        }
+        /* .active{
+            opacity: 1;
+            pointer-events: fill;
+        } */
+
+        .conHeading {
+            font-size: 1.25rem;
+            color: #333;
+            font-weight: 500;
+            text-align: center;
+        }
+        .input-field{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 30px;
+        }
+        .input-field input {
+            height: 43px;
+            width: 40px;
+            border-radius: 6px;
+            outline: none;
+            font-size: 1.125rem;
+            text-align: center;
+            border: 1px solid #ddd;
+            margin: 2px;
+            
+        }
+        form a {
+            font-family: lato,Arial, Helvetica, sans-serif;
+            margin-left: 80px;
+           text-decoration: none;
+            color: #fff;
+            font-size: 1rem;
+            border: none;
+            padding: 14px 20px;
+            cursor: pointer;
+            border-radius: 6px;
+            background: #5c5e63;
+        }
+        form a:hover {
+            background: #d6ddf1;
+            color: #333;
+            cursor: pointer;
+        }
+        header img{
+            width: 20%;
+            display: flex;
+            margin: auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <img src="protection.png" alt="shield check">
+        </header>
+        <h4 class="conHeading">Enter OTP Code</h4>
+        <form>
+            <div class="input-field">
+                <input type="number" maxlength="1">
+                <input type="number" maxlength="1">
+                <input type="number" maxlength="1">
+                <input type="number" maxlength="1">
+            </div>
+            <a href="thankyouPage.html">Verify OTP</a> 
+        </form>
+         
+    </div>
+</body>
+</html>

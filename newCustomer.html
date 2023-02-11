@@ -18,6 +18,7 @@
             background-color: rgb(255, 255, 255);
             padding: 3%;
             height: fit-content;
+            margin-top: 30px;
         }
 
         #mainBox p:first-child {
@@ -59,7 +60,13 @@
             color: rgb(51, 51, 51);
         }
 
-        #name,#email,#confirmEmail,#password,#confirmPassword,#mobile,#referal{
+        #name,
+        #email,
+        #confirmEmail,
+        #password,
+        #confirmPassword,
+        #mobile,
+        #referal {
             width: 92%;
             padding: 15px;
             margin: 0 auto;
@@ -164,15 +171,6 @@
             font-size: 14px;
         }
 
-        /* #referal {
-            width: 94%;
-            padding: 20px;
-            margin: 0 auto;
-            border: none;
-            border: solid 1px #aaa2a2;
-            border-radius: 4px;
-        } */
-
         #referalBox p:last-child {
             font-weight: 700;
             font-style: normal;
@@ -204,9 +202,11 @@
             color: rgb(46, 45, 45);
             /* scale: 1.2; */
         }
+
         #createAccount::placeholder {
             font-size: 18px;
         }
+
         #mainBox p:last-child {
             font-weight: 300;
             font-style: normal;
@@ -275,23 +275,44 @@
             margin-left: -8px;
         }
 
+        header {
+            background-color: white;
+            height: 90px;
+            padding: 0%;
+            margin: -7px;
+            position: sticky;
+            top: 0;
+        }
+
+        header img {
+            display: flex;
+            justify-content: start;
+            width: 200px;
+            margin-right: 83%;
+            padding: 8px;
+            cursor: pointer;
+        }
+
         @media screen and (max-width: 899px) {
             #mainBox {
                 width: 80%;
-               
+
             }
         }
     </style>
 </head>
 
 <body>
+    <header>
+        <div>
+            <img src="https://s1.thcdn.com/enterprise/assets/skstr-global-113e023e-ecc9-45df-abad-eb92ce1956c9-logo-default.svg"
+                alt="" onclick=window.location.href="index.html">
+        </div>
+    </header>
     <div id="mainBox">
         <p>About You</p>
         <p>Sign Up With</p>
         <div id="logo">
-            <!-- <button><i class="fa-brands fa-square-facebook"></i> Facebook</button>
-            <button><i class="fa-brands fa-google"></i> Google</button> -->
-
             <a
                 href="https://www.facebook.com/login.php?skip_api_login=1&api_key=1215984228522362&kid_directed_site=0&app_id=1215984228522362&signed_next=1&next=https%3A%2F%2Fwww.facebook.com%2Fv3.2%2Fdialog%2Foauth%3Fclient_id%3D1215984228522362%26redirect_uri%3Dhttps%253A%252F%252Floginservice.thehut.net%252Ffacebook%252FhandleLogin%26state%3DMzI2RjdDRDFCRTUwMDE3MTY0RUM1MDI3NUMxMTBBOURGMzlCMDc1OTEzMzc3ODJFNDJDRTQ5QzRDOUJGMzZEMA%253D%253D.ZXlKbGVIQnBjbmxVYVcxbElqb3hOamMxTmpjM01qRXhNVGs0TENKamMzSm1WRzlyWlc0aU9pSmtaakk0TVRGa1pTMDNOell4TFRRM09HTXRZVGt5WVMwNE0yRmpNekV4TXpWbE9EWWlMQ0p6YVhSbElqb2lNVEl4SWl3aWMzVmljMmwwWlNJNkluVnpJaXdpWTJ4cFpXNTBVM1JoZEdVaU9pSmxlVXA1V2xoU01XTnROVlZpZVVrMlNXMW9NR1JJUW5wS1ZFNUNTbFJLUjBwVVNrZGtNMlF6VEc1T2NtRlhOWHBrUnpsNVdsTTFhbUl5TUd4TmExcG9XVEpPZG1SWE5UQlRSemwwV2xNMWFGa3lUblprVnpVd1NXNHdYSFV3TUROa0lpd2ljSEp2ZG1sa1pYSWlPaUptWVdObFltOXZheUlzSW5KbFpHbHlaV04wVlhKc0lqb2lhSFIwY0hNNkx5OTNkM2N1YzJ0cGJuTjBiM0psTG1OdmJTOXpiMk5wWVd4QmRYUm9aVzUwYVdOaGRHbHZiaTVoWTJOdmRXNTBJaXdpWm14dmR5STZJbE5JU1VWTVJDSjk%253D%26scope%3Demail%26ret%3Dlogin%26fbapp_pres%3D0%26logger_id%3D4c63eef4-0473-424a-8a1f-a58887b4314c%26tp%3Dunspecified&cancel_url=https%3A%2F%2Floginservice.thehut.net%2Ffacebook%2FhandleLogin%3Ferror%3Daccess_denied%26error_code%3D200%26error_description%3DPermissions%2Berror%26error_reason%3Duser_denied%26state%3DMzI2RjdDRDFCRTUwMDE3MTY0RUM1MDI3NUMxMTBBOURGMzlCMDc1OTEzMzc3ODJFNDJDRTQ5QzRDOUJGMzZEMA%253D%253D.ZXlKbGVIQnBjbmxVYVcxbElqb3hOamMxTmpjM01qRXhNVGs0TENKamMzSm1WRzlyWlc0aU9pSmtaakk0TVRGa1pTMDNOell4TFRRM09HTXRZVGt5WVMwNE0yRmpNekV4TXpWbE9EWWlMQ0p6YVhSbElqb2lNVEl4SWl3aWMzVmljMmwwWlNJNkluVnpJaXdpWTJ4cFpXNTBVM1JoZEdVaU9pSmxlVXA1V2xoU01XTnROVlZpZVVrMlNXMW9NR1JJUW5wS1ZFNUNTbFJLUjBwVVNrZGtNMlF6VEc1T2NtRlhOWHBrUnpsNVdsTTFhbUl5TUd4TmExcG9XVEpPZG1SWE5UQlRSemwwV2xNMWFGa3lUblprVnpVd1NXNHdYSFV3TUROa0lpd2ljSEp2ZG1sa1pYSWlPaUptWVdObFltOXZheUlzSW5KbFpHbHlaV04wVlhKc0lqb2lhSFIwY0hNNkx5OTNkM2N1YzJ0cGJuTjBiM0psTG1OdmJTOXpiMk5wWVd4QmRYUm9aVzUwYVdOaGRHbHZiaTVoWTJOdmRXNTBJaXdpWm14dmR5STZJbE5JU1VWTVJDSjk%253D%23_%3D_&display=page&locale=en_GB&pl_dbl=0">
                 <img id="fb"
@@ -299,8 +320,6 @@
                     alt="facebook">
                 <p>Facebook</p>
             </a>
-            <!-- </div> -->
-            <!-- <div> -->
             <a
                 href="https://accounts.google.com/o/oauth2/v2/auth/oauthchooseaccount?client_id=1047782293270-uc6gapukv57blt03hbc6lt82dq80knbc.apps.googleusercontent.com&redirect_uri=https%3A%2F%2Floginservice.thehut.net%2Fgoogle%2FhandleLogin&scope=https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.email%20https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.profile&response_type=code&state=NTMyNDNGMTdDQkYzNjFCRTc3QTZBN0RBM0I1Mjk2NDUxODFBQUVBN0RGQkFFQzNEMTM4RDJCN0FBQjhGRTJEMg%3D%3D.ZXlKbGVIQnBjbmxVYVcxbElqb3hOamMxTmpjMk9URTNNREEyTENKamMzSm1WRzlyWlc0aU9pSmtZamt6WVRkbVlTMWtOemhtTFRRMk9UVXRPV1V6WWkwek9HUTNOR0ZtTm1Sa1pUa2lMQ0p6YVhSbElqb2lNVEl4SWl3aWMzVmljMmwwWlNJNkluVnpJaXdpWTJ4cFpXNTBVM1JoZEdVaU9pSmxlVXA1V2xoU01XTnROVlZpZVVrMlNXMW9NR1JJUW5wS1ZFNUNTbFJLUjBwVVNrZGtNMlF6VEc1T2NtRlhOWHBrUnpsNVdsTTFhbUl5TUd4TmExcG9XVEpPZG1SWE5UQlRSemwwV2xNMWFGa3lUblprVnpVd1NXNHdYSFV3TUROa0lpd2ljSEp2ZG1sa1pYSWlPaUpuYjI5bmJHVWlMQ0p5WldScGNtVmpkRlZ5YkNJNkltaDBkSEJ6T2k4dmQzZDNMbk5yYVc1emRHOXlaUzVqYjIwdmMyOWphV0ZzUVhWMGFHVnVkR2xqWVhScGIyNHVZV05qYjNWdWRDSXNJbVpzYjNjaU9pSlRTRWxGVEVRaWZRPT0%3D&prompt=consent&service=lso&o2v=2&flowName=GeneralOAuthFlow">
                 <img id="google"
@@ -311,7 +330,7 @@
 
         </div>
         <hr>
-     
+
         <p>Or create an email account</p>
         <p>* Full Name</p>
         <input type="text" id="name" required>
@@ -333,7 +352,7 @@
             <p>* Your referrals discount is automatically applied at cart</p>
         </div>
         <button id="createAccount">Create Account</button>
-        
+
         <p>By proceeding, you are confirming that you agree to our <span class="lastSpan">Terms and Conditions</span>
             and <span class="lastSpan">Privacy
                 Policy</span></p>
@@ -343,57 +362,56 @@
 
 </html>
 <script>
-document.querySelector("#createAccount").addEventListener("click", submitAccount);
-var userArr=JSON.parse(localStorage.getItem("userData")) || [];
-        function submitAccount(){
+    document.querySelector("#createAccount").addEventListener("click", submitAccount);
+    var userArr = JSON.parse(localStorage.getItem("userData")) || [];
+    function submitAccount() {
 
-    
-    var name =document.querySelector("#name").value;
-    console.log("name");
-    var email =document.querySelector("#email").value;
-    var pass=document.querySelector("#password").value;
-    // var confEmail=document.querySelector("#confirmEmail").value;
-    if ((document.querySelector("#confirmEmail").value)!=email){
-        alert("The Email & Confirm Email Should be Same");
-        document.querySelector("#confirmEmail").value="";
-    
-    }else if ((document.querySelector("#confirmPassword").value)!==pass){
+
+        var name = document.querySelector("#name").value;
+        console.log("name");
+        var email = document.querySelector("#email").value;
+        var pass = document.querySelector("#password").value;
+        // var confEmail=document.querySelector("#confirmEmail").value;
+        if ((document.querySelector("#confirmEmail").value) != email) {
+            alert("The Email & Confirm Email Should be Same");
+            document.querySelector("#confirmEmail").value = "";
+
+        } else if ((document.querySelector("#confirmPassword").value) !== pass) {
             alert("The Password & Confirm Password Should be Same");
-            console.log(pass,document.querySelector("#confirmPassword").value);
-    }else {
-            var confEmail=document.querySelector("#confirmEmail").value;
-          var confPass=document.querySelector("#confirmPassword").value;
-          var mobile=document.querySelector("#mobile").value;
-        console.log(name,email,confEmail,pass,confPass,mobile);
-        if(name=="" || mobile==""){
-            alert("Please Enter Valid Details");
-        }else{
-            var newUser={
-            name:name,
-            email:confEmail,
-            password:confPass,
-            mobile:mobile,
+            console.log(pass, document.querySelector("#confirmPassword").value);
+        } else {
+            var confEmail = document.querySelector("#confirmEmail").value;
+            var confPass = document.querySelector("#confirmPassword").value;
+            var mobile = document.querySelector("#mobile").value;
+            console.log(name, email, confEmail, pass, confPass, mobile);
+            if (name == "" || mobile == "") {
+                alert("Please Enter Valid Details");
+            } else {
+                var newUser = {
+                    name: name,
+                    email: confEmail,
+                    password: confPass,
+                    mobile: mobile,
+                }
+
+                userArr.push(newUser);
+                localStorage.setItem("userData", JSON.stringify(userArr));
+
+                document.querySelector("#name").value = "";
+                document.querySelector("#email").value = "";
+                document.querySelector("#confirmEmail").value = "";
+                document.querySelector("#password").value = "";
+                document.querySelector("#confirmPassword").value = "";
+                document.querySelector("#mobile").value = "";
+                window.location.href = "login.html";
+            }
         }
 
-        userArr.push(newUser);
-        localStorage.setItem("userData",JSON.stringify(userArr));
 
-        document.querySelector("#name").value="";
-        document.querySelector("#email").value="";
-        document.querySelector("#confirmEmail").value="";
-        document.querySelector("#password").value="";
-        document.querySelector("#confirmPassword").value="";
-        document.querySelector("#mobile").value="";
-        window.location.href="login.html";
+
+
+
+
+
     }
-        }
-        
-       
-
-        
-        
-
-      
-}
 </script>
-

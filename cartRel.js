@@ -198,7 +198,7 @@ function decresfun(elm,i){
   // document.querySelector("tbody").innerHTML = ""
   var qtyf = cartData[i].Qty;
   if(qtyf === 1){
-      alert("quty less")
+      alert("Quantity of the product cannot be less than 1");
   }else{
 
       qtyf--;

@@ -935,7 +935,14 @@ width: 40%;
 #checkOut{
   background-color:rgb(115, 115, 215);
   color: white;
+  border: none;
 }
+
+#checkOut:hover{
+  background-color: teal;
+  scale: 1.1;
+}
+
 
 
 

@@ -1,9 +1,11 @@
 
 function cartshow(){
     console.log("hii")
-    window.location.href = "cart.html";
-
+    window.location.href = "cart_page.html";
+      // var cartlength = JSON.parse(localStorage.getItem("cart-data"));
+      // var show = cartlength.length;
 }
+
 
 // humbarger code here 
 
