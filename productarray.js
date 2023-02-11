@@ -9,8 +9,8 @@ var products_Data = [{
         "description": "Celestial Black Diamond Serum 1.01 oz",
         "Qty": 1,
         "MRP": 600,
-        "discount": 0,
-        "finalPrice": 600
+        "discount": 20,
+        "finalPrice": 480
     },
     {
         "Id": "2",
@@ -20,9 +20,9 @@ var products_Data = [{
         "brand": "3LAB",
         "description": "Perfect BB SPF 40 1.5 oz.",
         "Qty": 1,
-        "MRP": 150,
-        "discount": 0,
-        "finalPrice": 150
+        "MRP": 1500,
+        "discount": 15,
+        "finalPrice": 1275
     },
     {
         "Id": "3",
