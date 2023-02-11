@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Product Page</title>
     <style>
+       
         #adminFrame {
             display: flex;
             width: 95%;
@@ -44,10 +45,7 @@
 
         }
 
-        a {
-            font-size: 24px;
-            margin-left: 80%;
-        }
+        
 
         h1 {
             text-align: center;
@@ -307,16 +305,71 @@
             padding: 10px;
 
         }
+        #adminHeader{
+   
+            display: flex;
+            border-bottom: 3px solid gray;
 
+        }
+        #adminHeader>img{
+            width:25%;
+           
+        }
+        #adminHeader> a {
 
+            font-size: 30px;
+            margin: auto;
+            padding-left:800px
+            
+
+            
+        }
+        @media only screen and (max-width: 600px) {
+            #adminFrame{
+                display: block;
+            }
+            #recentProducts{
+            display: grid;
+            grid-template-columns: repeat(1,1fr);       
+            }
+            table>td:nth-child(2),td:nth-child(4),td:nth-child(6),td:nth-child(7),td:nth-child(9) , th:nth-child(2), th:nth-child(4), th:nth-child(6), th:nth-child(7),th:nth-child(9){
+               display: none;
+               
+            }
+            #productform, #adminProductDisplay{
+                margin: auto;
+         
+            }
+
+        }
+        @media only screen and (min-width: 601px) and (max-width:900px) {
+
+            #productform, #adminProductDisplay{
+                margin: auto;
+          
+         
+            }
+            #recentProducts{
+            display: grid;
+            grid-template-columns: repeat(2,1fr);       
+            }
+            
+            table{
+                margin: auto;
+            }
+        }
         
         /*         Product Display      END                     */
     </style>
     <script src="https://kit.fontawesome.com/ad020c6830.js" crossorigin="anonymous"></script>
 </head>
 
-<body>
+<body><div id="adminHeader">
+    <img src="SkinStoreLOGO.jpeg" alt="logo">
     <a href="product.html">Product Page</a>
+
+</div>
+  
     <div id="adminFrame">
         <div id="productform">
             <form action="">
@@ -351,7 +404,7 @@
                 <input class="productbtn" id="formsub" type="submit">
             </form>
         </div>
-        <div>
+        <div id="adminProductDisplay">
             <h2>Recent Added Products</h2>
 
             <div id="recentProducts">
